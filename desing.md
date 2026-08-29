@@ -6,6 +6,18 @@ Gênero: [Estratégia] [Tabuleiro]
 Plataformas: [Windows] [Web]
 
 ## Sistemas principais
+- Fluxo do jogo em código:
+	- Jogando:
+		1. Seleciona uma peça
+		2. Revela as casas na qual ele pode interagir
+		3. Seleciona a casa para a peça interagir
+		4. A peça realiza a sua lógica de interação com a casa
+	- Regras do jogo:
+		(As ações do jogando, devem ser feitas por meio do código das regras do jogo, para que ele consiga ver a situação do jogo e aplicar suas condições.)
+		1. Código irá verificar as regras
+		2. Verifica após cada movimentação
+		3. Se alguma regra for cumprida
+		4. Ação envolvendo regra
 - Toda a lógica herdará de Object
 - Código gráfico herdará de Node2D e usará as classes criadas de Object
 Problemas principais:
@@ -36,13 +48,15 @@ Problemas principais:
 * Pode conter máquina de estados, pois o jogo deve ter um inicio meio e fim.
 - Atributos:
 	- manager: ChessManager // Por meio do Manager que ele faz a manipulação de peças no tabuleiro
+	- chessboard: Chessboard
 	- Jogador 1: ChessEntity
 	- Jogador 2: ChessEntity
 - Métodos:
 	- Iniciar jogo(jogador1: ChessPlayer//ChessBot, jogador2: ChessPlayer//ChessBot): Void // Inicia o jogo do xadrez, cria as peças iniciais e coloca elas em suas posições, etc.
-	- Mover peça(Peça: ChessPiece, para a casa: ChessSquare) // Requisita em ChessPiece a interação da peça na casa escolhida, e então decide se move ela ou não.
+	- Pegar tabuleiro: Chessboard
 	- Pegar Jogador1: ChessEntity
 	- Pegar Jogador2: ChessEntity
+	- Mover peça(Peça: ChessPiece, para a casa: ChessSquare) // Requisita em ChessPiece a interação da peça na casa escolhida, e então decide se move ela ou não.
 	- Escolher peça(Peça: ChessPiece): List[ChessSquare] // Escolhee uma peça retorna todas as casas que ela pode movimentar
 	- É CheckMate?: Bool // Regra de checkmate
 	- É Empate?: Bool // Regra de empate
@@ -51,10 +65,7 @@ Problemas principais:
 ### Gerenciador do Xadrez (ChessManager) -> Object
 - Representa a manipulação entre as peças e o tabuleiro
 - Contém toda a lógica de gerenciamento de peças
-- Atributos:
-	- chessboard: Chessboard
 - Métodos:
-	- Pegar tabuleiro: Chessboard
 	- Mover peça no tabuleiro(peça: ChessPiece, para a casa: ChessSquare): Void
 	- Remover peça do tabuleiro(peça: ChessPiece): Void
 	- Adicionar peça no tabuleiro(peça: ChessPiece, para a casa: ChessSquare): Void
