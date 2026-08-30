@@ -6,14 +6,14 @@ Gênero: [Estratégia] [Tabuleiro]
 Plataformas: [Windows] [Web]
 
 ## Sistemas principais
+Haverá uma clara diferença entre a lógica e a representação 2D do jogo, toda a parte 2D irá apenas traduzir o código.
 - Fluxo do jogo em código:
-	[Rodada] = Código que lidará com o sistema macro, o sistema das rodadas que irá fazer o xadrez funcionar.
 	- Início do jogo:
-		[Rodada] > (Cria as peças iniciais da entidade) ChessEntity (Cria o tabuleiro do xadrez) Chessboard (Coloca cada peça em sua posição inicial) Chessboard
+		ChessGame > (Cria as peças iniciais da entidade) ChessEntity (Cria o tabuleiro do xadrez) Chessboard (Coloca cada peça em sua posição inicial) Chessboard
 	- Jogando:
 		ChessEntity > (Seleciona peça na qual quer usar) ChessPiece (Retorna casas na qual pode interagir) ChessSquare (Seleciona a casa) ChessPiece (Passa a casa para a peça e ela faz sua lógica de interação) ChessPiece
 	- Progresso do jogo:
-		[Rodada] > (Inicia a rodada da entidade) ChessEntity {Jogando} ChessRules (Verifica as regras do jogo e age de acordo) [Rodada] (Vai para a próxima rodada se possível) [Rodada]
+		ChessGame > (Inicia a rodada da entidade) ChessEntity {Jogando} ChessRules (Verifica as regras do jogo e age de acordo) ChessGame (Vai para a próxima rodada se possível) ChessGame
 - Toda a lógica herdará de Object
 - Código gráfico herdará de Node2D e usará as classes criadas de Object
 Problemas principais:
@@ -25,26 +25,28 @@ Problemas principais:
 		Resolve problema de não conhecer quem foi o vencedor
 		Pode conter informações gerais da partida
 
-### Estado do jogo (GameState) -> Objetct
-- Representa o estado de turnos
-- Lógica de turnos
-Atributos:
-	- Máquina de estados: IDLE, NEW_GAME, WHITE_TURN, BLACK_TURN, END_TURN, END_GAME
-	-  ...
-
 ### Jogo do Xadrez (ChessGame) -> Object
 - Representa o jogo
 - Usa os componentes
 Atributos:
-	- Estado do jogo: GameState
+	- Estado do jogo: IDLE, NEW_GAME, WHITE_TURN, BLACK_TURN, END_TURN, VITORIA, EMPATE
 	- Regras: ChessRules
-	- Entidade 1: ChessEntity
-	- Entidade 2:  ChessEntity
+	- Jogador braco: ChessEntity
+	- Jogador preto:  ChessEntity
 	- Tabuleiro: Chessboard
 Métodos:
-	- Iniciar jogo(entidade1: ChessEntity, entidade2: ChessEntity)
+	- Novo jogo(branco: ChessEntity, preto: ChessEntity)
 		// Configura as entidades, cria e configura o Chessboard, cria o ChessRules. Cria e determina as posições iniciais das peças de cada entidade.
-	
+	- Turno branco
+		// Realiza o turno do jogador branco
+	- Turno preto
+		// Realiza o turno do jogador preto
+	- Fim do turno
+		// Chamada após cada fim de turno, faz as verificações de regras e etc. Decide o próximo estado de acordo com condições
+	- Vitoria(vencedor: ChessEntity)
+	 	// Fim do jogo: Checkmate
+	- Empate
+		// Fim do jogo: Empate
 ### Entidade do Xadrez (ChessEntity) -> Object
 - Representa a entidade que jogará o xadrez
 - Cótem lista das suas peças
@@ -56,6 +58,7 @@ Atributos:
 Métodos:
 	- @abstract Jogar a rodada
 		// Lógica de ação da rodada || Ex: Algoritmo de IA ou criar interface para o usuário interagir.
+	- @abstract  Promover peão(peão: Pawn)
 	- Peças no tabuleiro: Array[ChessPiece]
 	- Peças fora do tabuleiro: Array[ChessPiece]
 
@@ -64,7 +67,6 @@ Métodos:
 Atributos:
 	- chessboard: Chessboard
 Métodos:
-	- Pegar tabuleiro: Chessboard
 	- É CheckMate?: Bool // Regra de checkmate
 	- É Empate?: Bool // Regra de empate
 
@@ -82,7 +84,8 @@ Métodos:
 		- Mover peça no tabuleiro(peça: ChessPiece, para a casa: ChessSquare): Void
 		- Remover peça do tabuleiro(peça: ChessPiece): Void
 		- Adicionar peça no tabuleiro(peça: ChessPiece, para a casa: ChessSquare): Void
-		- Modificar/Substituir peça no tabuleiro(peça: ChessPiece, nova peça: ChessPiece): Void
+		// EM DÚVIDA:
+			- Modificar/Substituir peça no tabuleiro(peça: ChessPiece, nova peça: ChessPiece): Void
 
 #### As Casas (ChessSquare) -> Object
 - Representa cada casa do tabuleiro
