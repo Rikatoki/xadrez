@@ -24,15 +24,31 @@ func _init() -> void:
 
 func new_game(white: ChessEntity, black: ChessEntity) -> void:
 	if !white or !black:
-		return push_error("Para iniciar um jogo é necessário ter entidade de ambos os lados. \nWhite: " + str(white) + "\nBlack: " + str(black))
-	
+			return push_error("Para iniciar um jogo é necessário ter entidade de ambos os lados. \nWhite: " + str(white) + "\nBlack: " + str(black))
+	if state == States.IDLE:
+		state = States.NEW_GAME
+		entity_white = white
+		entity_black = black
+		entity_white.entity_pieces = _white_initial_pieces()
+		entity_black.entity_pieces = _black_initial_pieces()
+
+func _white_initial_pieces() -> Array[ChessPiece]:
+	var pieces: Array[ChessPiece] = []
+	 
+	return pieces
+
+func _black_initial_pieces() -> Array[ChessPiece]:
+	var pieces: Array[ChessPiece] = []
+	 
+	return pieces
+
 func white_turn() -> void:
-	pass
+	entity_white.play_round()
 
 func black_turn() -> void:
-	pass
+	entity_black.play_round()
 
-func end_turn() -> void:
+func end_turn() -> void: # Verifica regras com GameRules
 	pass
 
 func victory(winner: ChessEntity) -> void:
