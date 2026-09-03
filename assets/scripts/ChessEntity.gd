@@ -3,11 +3,7 @@ extends Object
 class_name ChessEntity
 
 var entity_pieces: Array[ChessPiece]
-
-func _init(_pieces: Array[ChessPiece]) -> void:
-	entity_pieces = _pieces
-	if entity_pieces == null:
-		entity_pieces = []
+var chess_side: GameVariables.ChessSide
 
 @abstract
 func play_round() -> void

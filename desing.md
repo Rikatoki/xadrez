@@ -25,8 +25,14 @@ Problemas principais:
 		Resolve problema de não conhecer quem foi o vencedor
 		Pode conter informações gerais da partida
 
-### Jogo do Xadrez (ChessGame) -> Object
+### Jogo do Xadrez (ChessGame) -> Node
 - Representa o jogo
+- Usa o ChessMatch // Lógica do jogo de xadrez
+- Conecta a lógica com a interface
+
+### Jogo do Xadrez (ChessMatch) -> Object
+- Representa a parte lógica das particas
+- Contém o sistema de turnos
 - Usa os componentes
 Atributos:
 	- Estado do jogo: IDLE, NEW_GAME, WHITE_TURN, BLACK_TURN, END_TURN, VITORIA, EMPATE
