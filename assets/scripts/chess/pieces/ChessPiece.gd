@@ -6,18 +6,35 @@ var square: ChessSquare
 
 var chess_side: GameVariables.ChessSide
 
+var check_by: Array[ChessPiece]:
+	get = get_check_by
+
 func _init(_square: ChessSquare, side: GameVariables.ChessSide) -> void:
 	square = _square
 	chess_side = side
 
-@abstract
-func interactable_squares() -> Array[ChessSquare]
+func get_movements() -> Array[ChessSquare]:
+	var movements: Array[ChessSquare] = []
+	for i in square.chessboard.chess_squares:
+		if _can_move(i):
+			movements.append(i)
+	return movements
 
 @abstract
 func interact_square(_square: ChessSquare) -> void
+
+@abstract
+func _can_move(_square) -> bool
+
+func get_check_by() -> Array[ChessPiece]:
+	var enemy_pieces: Array[ChessPiece] =  ChessMatch.chess_match.get_oppenent_by_side(chess_side).get_pieces_in_board()
+	return enemy_pieces.filter(func(p: ChessPiece): return square in p.get_movements())
 
 func in_square() -> bool:
 	return square != null
 
 func get_side() -> GameVariables.ChessSide:
 	return chess_side
+
+func is_same_side(_piece: ChessPiece) -> bool:
+	return _piece.chess_side == chess_side
