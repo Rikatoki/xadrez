@@ -1,6 +1,7 @@
 extends Object
 class_name ChessMatch
 
+static var chess_match: ChessMatch
 enum States{
 	IDLE,
 	NEW_GAME,
@@ -10,7 +11,6 @@ enum States{
 	VICTORY,
 	DRAW
 }
-
 var state: States
 var rules: ChessRules
 var entity_white: ChessEntity
@@ -18,6 +18,7 @@ var entity_black: ChessEntity
 var board: Chessboard
 
 func _init() -> void:
+	chess_match = self
 	state = States.IDLE
 	board = Chessboard.new()
 	rules = ChessRules.new()
@@ -26,12 +27,10 @@ func new_game(white: ChessEntity, black: ChessEntity) -> void:
 	if !white or !black:
 			return push_error("Para iniciar um jogo é necessário ter entidade de ambos os lados. \nWhite: " + str(white) + "\nBlack: " + str(black))
 	if state == States.IDLE:
-		white.chess_side = GAME_VARIABLES.ChessSide.WHITE
-		black.chess_side = GAME_VARIABLES.ChessSide.BLACK
 		entity_white = white
 		entity_black = black
-		entity_white.entity_pieces = _white_initial_pieces()
-		entity_black.entity_pieces = _black_initial_pieces()
+		white.set_pieces(_white_initial_pieces()).set_side(GAME_VARIABLES.ChessSide.WHITE)
+		black.set_pieces(_black_initial_pieces()).set_side(GAME_VARIABLES.ChessSide.BLACK)
 		state = States.NEW_GAME
 		white_turn()
 
@@ -68,6 +67,12 @@ func draw() -> void:
 	if state == States.END_TURN:
 		# Código...
 		state = States.DRAW
+
+func get_entity_by_side(side: GameVariables.ChessSide) -> ChessEntity:
+	return entity_white if side == GAME_VARIABLES.ChessSide.WHITE else entity_black
+
+func get_oppenent_by_side(side: GameVariables.ChessSide) -> ChessEntity:
+	return entity_white if side == GAME_VARIABLES.ChessSide.BLACK else entity_black
 
 func _white_initial_pieces() -> Array[ChessPiece]:
 	var pieces: Array[ChessPiece] = []

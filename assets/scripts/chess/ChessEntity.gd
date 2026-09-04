@@ -15,3 +15,11 @@ func get_pieces_in_board() -> Array[ChessPiece]:
 func get_pieces_not_in_board() -> Array[ChessPiece]:
 	var pieces_not_in_board: Array[ChessPiece] = entity_pieces.filter(func(i: ChessPiece): return not i.in_square())
 	return pieces_not_in_board
+
+func set_pieces(pieces: Array[ChessPiece]) -> ChessEntity:
+	entity_pieces = pieces
+	return self
+
+func set_side(side: GameVariables.ChessSide) -> ChessEntity:
+	chess_side = side
+	return self
