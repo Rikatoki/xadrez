@@ -1,0 +1,448 @@
+[gd_scene format=3 uid="uid://cru2jyd738gvf"]
+
+[ext_resource type="Script" uid="uid://dp2o78jtq8gxi" path="res://assets/scripts/gui/ChessTable.gd" id="1_f3axl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f3axl"]
+size = Vector2(65, 65)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lifp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mfco"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8ilh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buhuv"]
+
+[node name="ChessTable" type="Control" unique_id=2104970975]
+layout_mode = 3
+anchor_left = 0.25300002
+anchor_right = 0.76100004
+anchor_bottom = 1.0
+offset_left = 0.54397583
+offset_top = 30.963326
+offset_right = 0.3279419
+offset_bottom = -32.036682
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9993439, 1.0076594)
+script = ExtResource("1_f3axl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=396590385]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1642278726]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1777521422]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/Background" unique_id=1582616654]
+position = Vector2(34, 34)
+texture = SubResource("PlaceholderTexture2D_f3axl")
+
+[node name="Background2" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1160106495]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1lifp")
+
+[node name="Background3" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1028583333]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background4" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1007464505]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mfco")
+
+[node name="Background5" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=597688927]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background6" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1840755300]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_l8ilh")
+
+[node name="Background7" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=78962818]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background8" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1739592863]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_buhuv")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1061396990]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=100326726]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1560823162]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=2000900866]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=740797379]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1545484428]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1107772952]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1016981927]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1615810892]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=78389055]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1991409018]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1850286181]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1644688080]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1978164692]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=967903431]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1398354746]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=866959206]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=950604026]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=976255745]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1297237570]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=751565433]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1091570306]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1343281722]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1888091534]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1640923914]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1431484728]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=498917206]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" unique_id=252723514]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1638317598]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=240015878]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1766790778]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1197113195]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1730457997]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1394047614]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=99921406]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1140852577]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer" unique_id=1158013177]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=1662757983]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=107495758]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=87242066]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=2142812542]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=620311342]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=131553448]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=2026171287]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=917809895]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer" unique_id=22967215]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=689592312]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1978585437]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1648822714]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=697783700]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1680835415]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=2071940085]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=83653617]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=446275829]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer" unique_id=1581019356]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=161435849]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=491542905]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1504888311]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=481123362]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=797099714]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1232899079]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=932460909]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+
+[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1511229531]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.08976587, 0.12267531, 0.6314185, 1)

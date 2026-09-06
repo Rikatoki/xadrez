@@ -2,6 +2,9 @@ extends ChessPiece
 class_name Rook
 
 func interact_square(_square: ChessSquare) -> void:
+	if _square.has_piece():
+		Chessboard.remove_piece(_square.piece)
+	Chessboard.move_piece(self, _square)
 	return
 
 func _can_move(_square: ChessSquare) -> bool:

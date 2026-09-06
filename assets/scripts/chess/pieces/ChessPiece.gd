@@ -6,6 +6,8 @@ var square: ChessSquare
 
 var chess_side: GameVariables.ChessSide
 
+var _movements: Movements
+
 var check_by: Array[ChessPiece]:
 	get = get_check_by
 
@@ -38,3 +40,9 @@ func get_side() -> GameVariables.ChessSide:
 
 func is_same_side(_piece: ChessPiece) -> bool:
 	return _piece.chess_side == chess_side
+
+## Classe que lidará com os tipos de movimentações de cada peça.
+class Movements: 
+	func _init() -> void:
+		pass
+	pass
