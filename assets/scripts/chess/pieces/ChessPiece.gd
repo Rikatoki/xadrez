@@ -2,6 +2,8 @@
 extends Object
 class_name ChessPiece
 
+var piece_name: StringName
+
 var square: ChessSquare
 
 var chess_side: GameVariables.ChessSide
@@ -14,6 +16,7 @@ var check_by: Array[ChessPiece]:
 func _init(_square: ChessSquare, side: GameVariables.ChessSide) -> void:
 	square = _square
 	chess_side = side
+	piece_name = _get_piece_name()
 
 func get_movements() -> Array[ChessSquare]:
 	var movements: Array[ChessSquare] = []
@@ -21,6 +24,9 @@ func get_movements() -> Array[ChessSquare]:
 		if _can_move(i):
 			movements.append(i)
 	return movements
+
+func _get_piece_name() -> StringName:
+	return &""
 
 @abstract
 func interact_square(_square: ChessSquare) -> void

@@ -1,448 +1,201 @@
-[gd_scene format=3 uid="uid://cru2jyd738gvf"]
-
-[ext_resource type="Script" uid="uid://dp2o78jtq8gxi" path="res://assets/scripts/gui/ChessTable.gd" id="1_f3axl"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f3axl"]
-size = Vector2(65, 65)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lifp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mfco"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8ilh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buhuv"]
-
-[node name="ChessTable" type="Control" unique_id=2104970975]
-layout_mode = 3
-anchor_left = 0.25300002
-anchor_right = 0.76100004
-anchor_bottom = 1.0
-offset_left = 0.54397583
-offset_top = 30.963326
-offset_right = 0.3279419
-offset_bottom = -32.036682
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.9993439, 1.0076594)
-script = ExtResource("1_f3axl")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=396590385]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1642278726]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1777521422]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/Background" unique_id=1582616654]
-position = Vector2(34, 34)
-texture = SubResource("PlaceholderTexture2D_f3axl")
-
-[node name="Background2" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1160106495]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_1lifp")
-
-[node name="Background3" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1028583333]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background4" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1007464505]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_7mfco")
-
-[node name="Background5" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=597688927]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background6" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1840755300]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_l8ilh")
-
-[node name="Background7" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=78962818]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background8" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1739592863]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_buhuv")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1061396990]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=100326726]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1560823162]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=2000900866]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=740797379]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1545484428]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1107772952]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1016981927]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer2" unique_id=1615810892]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=78389055]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1991409018]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1850286181]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1644688080]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1978164692]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=967903431]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=1398354746]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=866959206]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer3" unique_id=950604026]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=976255745]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1297237570]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=751565433]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1091570306]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1343281722]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1888091534]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1640923914]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=1431484728]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer4" unique_id=498917206]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" unique_id=252723514]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1638317598]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=240015878]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1766790778]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1197113195]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1730457997]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1394047614]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=99921406]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer5" unique_id=1140852577]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer" unique_id=1158013177]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=1662757983]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=107495758]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=87242066]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=2142812542]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=620311342]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=131553448]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=2026171287]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer6" unique_id=917809895]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer" unique_id=22967215]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=689592312]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1978585437]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1648822714]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=697783700]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=1680835415]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=2071940085]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=83653617]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer7" unique_id=446275829]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer" unique_id=1581019356]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=161435849]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background2" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=491542905]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background3" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1504888311]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background4" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=481123362]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background5" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=797099714]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background6" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1232899079]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background7" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=932460909]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
-
-[node name="Background8" type="ColorRect" parent="VBoxContainer/HBoxContainer8" unique_id=1511229531]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.08976587, 0.12267531, 0.6314185, 1)
+[gd_scene format=3 uid="uid://rjdr1yigkpch"]
+
+[ext_resource type="PackedScene" uid="uid://1tq3kesbmcpq" path="res://assets/scenes/table_square.tscn" id="2_1lifp"]
+[ext_resource type="Texture2D" uid="uid://c3p8fnecaux7x" path="res://assets/sprites/boards/board_plain_01.png" id="3_ryg3b"]
+
+[node name="ChessTable" type="Node2D" unique_id=749821542]
+
+[node name="Board" type="Sprite2D" parent="." unique_id=198510319]
+texture = ExtResource("3_ryg3b")
+
+[node name="TableSquare" parent="." unique_id=1176712095 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, 48)
+
+[node name="TableSquare2" parent="." unique_id=429332190 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, 48)
+
+[node name="TableSquare3" parent="." unique_id=369327495 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, 48)
+
+[node name="TableSquare4" parent="." unique_id=1244918731 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, 48)
+
+[node name="TableSquare5" parent="." unique_id=1651812282 instance=ExtResource("2_1lifp")]
+position = Vector2(8, 48)
+
+[node name="TableSquare6" parent="." unique_id=1222974981 instance=ExtResource("2_1lifp")]
+position = Vector2(24, 48)
+
+[node name="TableSquare7" parent="." unique_id=1517188609 instance=ExtResource("2_1lifp")]
+position = Vector2(40, 48)
+
+[node name="TableSquare8" parent="." unique_id=1061182593 instance=ExtResource("2_1lifp")]
+position = Vector2(56, 48)
+
+[node name="TableSquare9" parent="." unique_id=28787157 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, 32)
+
+[node name="TableSquare10" parent="." unique_id=1320624219 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, 32)
+
+[node name="TableSquare11" parent="." unique_id=399042787 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, 32)
+
+[node name="TableSquare12" parent="." unique_id=1424493655 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, 32)
+
+[node name="TableSquare13" parent="." unique_id=121047584 instance=ExtResource("2_1lifp")]
+position = Vector2(8, 32)
+
+[node name="TableSquare14" parent="." unique_id=1022975393 instance=ExtResource("2_1lifp")]
+position = Vector2(24, 32)
+
+[node name="TableSquare15" parent="." unique_id=2128828471 instance=ExtResource("2_1lifp")]
+position = Vector2(40, 32)
+
+[node name="TableSquare16" parent="." unique_id=637046834 instance=ExtResource("2_1lifp")]
+position = Vector2(56, 32)
+
+[node name="TableSquare17" parent="." unique_id=1352734348 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, 16)
+
+[node name="TableSquare18" parent="." unique_id=1230037036 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, 16)
+
+[node name="TableSquare19" parent="." unique_id=848302640 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, 16)
+
+[node name="TableSquare20" parent="." unique_id=1910317829 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, 16)
+
+[node name="TableSquare21" parent="." unique_id=1816038639 instance=ExtResource("2_1lifp")]
+position = Vector2(8, 16)
+
+[node name="TableSquare22" parent="." unique_id=1696513963 instance=ExtResource("2_1lifp")]
+position = Vector2(24, 16)
+
+[node name="TableSquare23" parent="." unique_id=1436913854 instance=ExtResource("2_1lifp")]
+position = Vector2(40, 16)
+
+[node name="TableSquare24" parent="." unique_id=136039998 instance=ExtResource("2_1lifp")]
+position = Vector2(56, 16)
+
+[node name="TableSquare25" parent="." unique_id=1629998145 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, 0)
+
+[node name="TableSquare26" parent="." unique_id=422390484 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, 0)
+
+[node name="TableSquare27" parent="." unique_id=519453760 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, 0)
+
+[node name="TableSquare28" parent="." unique_id=1319789048 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, 0)
+
+[node name="TableSquare29" parent="." unique_id=536822327 instance=ExtResource("2_1lifp")]
+position = Vector2(8, 0)
+
+[node name="TableSquare30" parent="." unique_id=2144242161 instance=ExtResource("2_1lifp")]
+position = Vector2(24, 0)
+
+[node name="TableSquare31" parent="." unique_id=1022069236 instance=ExtResource("2_1lifp")]
+position = Vector2(40, 0)
+
+[node name="TableSquare32" parent="." unique_id=405696824 instance=ExtResource("2_1lifp")]
+position = Vector2(56, 0)
+
+[node name="TableSquare33" parent="." unique_id=610886076 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, -16)
+
+[node name="TableSquare34" parent="." unique_id=122415360 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, -16)
+
+[node name="TableSquare35" parent="." unique_id=1575233034 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, -16)
+
+[node name="TableSquare36" parent="." unique_id=1863203838 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, -16)
+
+[node name="TableSquare37" parent="." unique_id=277364330 instance=ExtResource("2_1lifp")]
+position = Vector2(8, -16)
+
+[node name="TableSquare38" parent="." unique_id=1186634968 instance=ExtResource("2_1lifp")]
+position = Vector2(24, -16)
+
+[node name="TableSquare39" parent="." unique_id=1778080681 instance=ExtResource("2_1lifp")]
+position = Vector2(40, -16)
+
+[node name="TableSquare40" parent="." unique_id=405129927 instance=ExtResource("2_1lifp")]
+position = Vector2(56, -16)
+
+[node name="TableSquare41" parent="." unique_id=685277748 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, -32)
+
+[node name="TableSquare42" parent="." unique_id=1825191610 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, -32)
+
+[node name="TableSquare43" parent="." unique_id=625744108 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, -32)
+
+[node name="TableSquare44" parent="." unique_id=1957874432 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, -32)
+
+[node name="TableSquare45" parent="." unique_id=1273030728 instance=ExtResource("2_1lifp")]
+position = Vector2(8, -32)
+
+[node name="TableSquare46" parent="." unique_id=122815408 instance=ExtResource("2_1lifp")]
+position = Vector2(24, -32)
+
+[node name="TableSquare47" parent="." unique_id=1497647593 instance=ExtResource("2_1lifp")]
+position = Vector2(40, -32)
+
+[node name="TableSquare48" parent="." unique_id=1558330725 instance=ExtResource("2_1lifp")]
+position = Vector2(56, -32)
+
+[node name="TableSquare49" parent="." unique_id=950241586 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, -48)
+
+[node name="TableSquare50" parent="." unique_id=1970676267 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, -48)
+
+[node name="TableSquare51" parent="." unique_id=993555873 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, -48)
+
+[node name="TableSquare52" parent="." unique_id=1569603587 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, -48)
+
+[node name="TableSquare53" parent="." unique_id=2104943970 instance=ExtResource("2_1lifp")]
+position = Vector2(8, -48)
+
+[node name="TableSquare54" parent="." unique_id=811192641 instance=ExtResource("2_1lifp")]
+position = Vector2(24, -48)
+
+[node name="TableSquare55" parent="." unique_id=490373045 instance=ExtResource("2_1lifp")]
+position = Vector2(40, -48)
+
+[node name="TableSquare56" parent="." unique_id=548406188 instance=ExtResource("2_1lifp")]
+position = Vector2(56, -48)
+
+[node name="TableSquare57" parent="." unique_id=1435649574 instance=ExtResource("2_1lifp")]
+position = Vector2(-56, -64)
+
+[node name="TableSquare58" parent="." unique_id=1990955917 instance=ExtResource("2_1lifp")]
+position = Vector2(-40, -64)
+
+[node name="TableSquare59" parent="." unique_id=536981649 instance=ExtResource("2_1lifp")]
+position = Vector2(-24, -64)
+
+[node name="TableSquare60" parent="." unique_id=74752253 instance=ExtResource("2_1lifp")]
+position = Vector2(-8, -64)
+
+[node name="TableSquare61" parent="." unique_id=444793476 instance=ExtResource("2_1lifp")]
+position = Vector2(8, -64)
+
+[node name="TableSquare62" parent="." unique_id=1590638547 instance=ExtResource("2_1lifp")]
+position = Vector2(24, -64)
+
+[node name="TableSquare63" parent="." unique_id=933364015 instance=ExtResource("2_1lifp")]
+position = Vector2(40, -64)
+
+[node name="TableSquare64" parent="." unique_id=219671592 instance=ExtResource("2_1lifp")]
+position = Vector2(56, -64)

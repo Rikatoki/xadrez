@@ -3,6 +3,9 @@ class_name Pawn
 
 var _has_moved: bool = false
 
+func _get_piece_name() -> StringName:
+	return &"Pawn"
+
 func interact_square(_square: ChessSquare) -> void:
 	_has_moved = true
 	if _square.has_piece():

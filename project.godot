@@ -13,6 +13,7 @@ config_version=5
 config/name="Xadrez"
 config/version="Alpha 1.0"
 config/tags=PackedStringArray("2d", "estudo", "simples", "strategy")
+run/main_scene="uid://bjyi5qvx353pb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,12 +21,20 @@ config/icon="res://icon.svg"
 
 GAME_VARIABLES="*uid://bvluee1ctt4w6"
 
+[display]
+
+window/size/viewport_width=420
+window/size/viewport_height=236
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

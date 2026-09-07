@@ -1,6 +1,9 @@
 extends ChessPiece
 class_name Queen
 
+func _get_piece_name() -> StringName:
+	return &"Queen"
+
 func interact_square(_square: ChessSquare) -> void:
 	if _square.has_piece():
 		Chessboard.remove_piece(_square.piece)
