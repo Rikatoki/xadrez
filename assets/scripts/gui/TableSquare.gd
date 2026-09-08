@@ -19,8 +19,8 @@ func update_square() -> TableSquare:
 	return self
 
 func _update_piece_sprite() -> TableSquare:
-	var sprite = _get_piece_sprite()
-	var square_has_piece = _chess_square.has_piece()
+	var sprite: TablePiece = _get_piece_sprite()
+	var square_has_piece: bool = _chess_square.has_piece()
 	# Remove o sprite caso ele esteja desatualizado.
 	if sprite and (not square_has_piece or (square_has_piece and _chess_square.piece != sprite.get_piece())):
 		sprite.free()

@@ -1,12 +1,13 @@
-@abstract
+#@abstract
 extends Object
 class_name ChessEntity
 
 var entity_pieces: Array[ChessPiece]
 var chess_side: GameVariables.ChessSide
 
-@abstract
-func play_round() -> void
+#@abstract
+func play_round() -> void:
+	return
 
 func get_pieces_in_board() -> Array[ChessPiece]:
 	var pieces_in_board: Array[ChessPiece] = entity_pieces.filter(func(i: ChessPiece): return i.in_square())

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cvqpeux63y6t4"]
 
 [ext_resource type="PackedScene" uid="uid://rjdr1yigkpch" path="res://assets/scenes/chess_table.tscn" id="1_bleca"]
+[ext_resource type="Script" uid="uid://cnc14ci6ny67k" path="res://assets/scripts/GameTest.gd" id="1_ne2pt"]
 
 [node name="GameTest" type="Node" unique_id=1748241590]
+script = ExtResource("1_ne2pt")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=496299834]
 anchors_preset = 15

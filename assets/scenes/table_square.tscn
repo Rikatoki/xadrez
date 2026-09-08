@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://1tq3kesbmcpq"]
 
+[ext_resource type="Script" uid="uid://hjudcxael6cr" path="res://assets/scripts/gui/TableSquare.gd" id="1_x5i6n"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya5fw"]
 size = Vector2(16, 16)
 
-[node name="Square" type="Node2D" unique_id=429332190]
+[node name="Square" type="Node2D" unique_id=1823263110]
+script = ExtResource("1_x5i6n")
+metadata/_custom_type_script = "uid://hjudcxael6cr"
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1487585016]

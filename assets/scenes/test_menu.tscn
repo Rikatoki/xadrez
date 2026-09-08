@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5burhlx3xc6r" path="res://assets/scripts/gui/SceneButton.gd" id="1_omajv"]
 [ext_resource type="Script" uid="uid://c00lyjajoypv8" path="res://assets/scripts/gui/ExitButton.gd" id="2_etq7q"]
+[ext_resource type="PackedScene" uid="uid://cvqpeux63y6t4" path="res://assets/scenes/game_test.tscn" id="2_qbv1i"]
 
 [node name="TestMenu" type="Control" unique_id=1303519598]
 layout_mode = 3
@@ -40,6 +41,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 text = "Inicar Teste"
 script = ExtResource("1_omajv")
+go_to = ExtResource("2_qbv1i")
 
 [node name="QuitButton" type="Button" parent="Buttons" unique_id=1079028508]
 layout_mode = 2

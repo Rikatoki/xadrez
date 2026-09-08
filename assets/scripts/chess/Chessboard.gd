@@ -7,10 +7,11 @@ func _init() -> void:
 	_create_matriz()
 
 func _create_matriz() -> void:
-	var matriz: Array[ChessSquare] = []
+	chess_squares = []
 	for column in range(1,9):
 		for line in range(1,9):
-			matriz.append(ChessSquare.new(self, Vector2i(line,column)))
+			var square: ChessSquare = ChessSquare.new(self, Vector2i(line,column))
+			chess_squares.append(square)
 
 func get_square_by_coordinate(coordinate: Vector2i) -> ChessSquare:
 	for i in chess_squares:

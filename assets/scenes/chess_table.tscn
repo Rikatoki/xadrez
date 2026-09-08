@@ -1,201 +1,206 @@
 [gd_scene format=3 uid="uid://rjdr1yigkpch"]
 
+[ext_resource type="Script" uid="uid://dp2o78jtq8gxi" path="res://assets/scripts/gui/ChessTable.gd" id="1_7mfco"]
 [ext_resource type="PackedScene" uid="uid://1tq3kesbmcpq" path="res://assets/scenes/table_square.tscn" id="2_1lifp"]
 [ext_resource type="Texture2D" uid="uid://c3p8fnecaux7x" path="res://assets/sprites/boards/board_plain_01.png" id="3_ryg3b"]
 
-[node name="ChessTable" type="Node2D" unique_id=749821542]
+[node name="ChessTable" type="Node2D" unique_id=126916798]
+script = ExtResource("1_7mfco")
+metadata/_custom_type_script = "uid://dp2o78jtq8gxi"
 
 [node name="Board" type="Sprite2D" parent="." unique_id=198510319]
 texture = ExtResource("3_ryg3b")
 
-[node name="TableSquare" parent="." unique_id=1176712095 instance=ExtResource("2_1lifp")]
+[node name="Squares" type="Node2D" parent="." unique_id=390834380]
+
+[node name="TableSquare" parent="Squares" unique_id=1176712095 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, 48)
 
-[node name="TableSquare2" parent="." unique_id=429332190 instance=ExtResource("2_1lifp")]
+[node name="TableSquare2" parent="Squares" unique_id=429332190 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, 48)
 
-[node name="TableSquare3" parent="." unique_id=369327495 instance=ExtResource("2_1lifp")]
+[node name="TableSquare3" parent="Squares" unique_id=369327495 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, 48)
 
-[node name="TableSquare4" parent="." unique_id=1244918731 instance=ExtResource("2_1lifp")]
+[node name="TableSquare4" parent="Squares" unique_id=1244918731 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, 48)
 
-[node name="TableSquare5" parent="." unique_id=1651812282 instance=ExtResource("2_1lifp")]
+[node name="TableSquare5" parent="Squares" unique_id=1651812282 instance=ExtResource("2_1lifp")]
 position = Vector2(8, 48)
 
-[node name="TableSquare6" parent="." unique_id=1222974981 instance=ExtResource("2_1lifp")]
+[node name="TableSquare6" parent="Squares" unique_id=1222974981 instance=ExtResource("2_1lifp")]
 position = Vector2(24, 48)
 
-[node name="TableSquare7" parent="." unique_id=1517188609 instance=ExtResource("2_1lifp")]
+[node name="TableSquare7" parent="Squares" unique_id=1517188609 instance=ExtResource("2_1lifp")]
 position = Vector2(40, 48)
 
-[node name="TableSquare8" parent="." unique_id=1061182593 instance=ExtResource("2_1lifp")]
+[node name="TableSquare8" parent="Squares" unique_id=1061182593 instance=ExtResource("2_1lifp")]
 position = Vector2(56, 48)
 
-[node name="TableSquare9" parent="." unique_id=28787157 instance=ExtResource("2_1lifp")]
+[node name="TableSquare9" parent="Squares" unique_id=28787157 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, 32)
 
-[node name="TableSquare10" parent="." unique_id=1320624219 instance=ExtResource("2_1lifp")]
+[node name="TableSquare10" parent="Squares" unique_id=1320624219 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, 32)
 
-[node name="TableSquare11" parent="." unique_id=399042787 instance=ExtResource("2_1lifp")]
+[node name="TableSquare11" parent="Squares" unique_id=399042787 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, 32)
 
-[node name="TableSquare12" parent="." unique_id=1424493655 instance=ExtResource("2_1lifp")]
+[node name="TableSquare12" parent="Squares" unique_id=1424493655 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, 32)
 
-[node name="TableSquare13" parent="." unique_id=121047584 instance=ExtResource("2_1lifp")]
+[node name="TableSquare13" parent="Squares" unique_id=121047584 instance=ExtResource("2_1lifp")]
 position = Vector2(8, 32)
 
-[node name="TableSquare14" parent="." unique_id=1022975393 instance=ExtResource("2_1lifp")]
+[node name="TableSquare14" parent="Squares" unique_id=1022975393 instance=ExtResource("2_1lifp")]
 position = Vector2(24, 32)
 
-[node name="TableSquare15" parent="." unique_id=2128828471 instance=ExtResource("2_1lifp")]
+[node name="TableSquare15" parent="Squares" unique_id=2128828471 instance=ExtResource("2_1lifp")]
 position = Vector2(40, 32)
 
-[node name="TableSquare16" parent="." unique_id=637046834 instance=ExtResource("2_1lifp")]
+[node name="TableSquare16" parent="Squares" unique_id=637046834 instance=ExtResource("2_1lifp")]
 position = Vector2(56, 32)
 
-[node name="TableSquare17" parent="." unique_id=1352734348 instance=ExtResource("2_1lifp")]
+[node name="TableSquare17" parent="Squares" unique_id=1352734348 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, 16)
 
-[node name="TableSquare18" parent="." unique_id=1230037036 instance=ExtResource("2_1lifp")]
+[node name="TableSquare18" parent="Squares" unique_id=1230037036 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, 16)
 
-[node name="TableSquare19" parent="." unique_id=848302640 instance=ExtResource("2_1lifp")]
+[node name="TableSquare19" parent="Squares" unique_id=848302640 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, 16)
 
-[node name="TableSquare20" parent="." unique_id=1910317829 instance=ExtResource("2_1lifp")]
+[node name="TableSquare20" parent="Squares" unique_id=1910317829 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, 16)
 
-[node name="TableSquare21" parent="." unique_id=1816038639 instance=ExtResource("2_1lifp")]
+[node name="TableSquare21" parent="Squares" unique_id=1816038639 instance=ExtResource("2_1lifp")]
 position = Vector2(8, 16)
 
-[node name="TableSquare22" parent="." unique_id=1696513963 instance=ExtResource("2_1lifp")]
+[node name="TableSquare22" parent="Squares" unique_id=1696513963 instance=ExtResource("2_1lifp")]
 position = Vector2(24, 16)
 
-[node name="TableSquare23" parent="." unique_id=1436913854 instance=ExtResource("2_1lifp")]
+[node name="TableSquare23" parent="Squares" unique_id=1436913854 instance=ExtResource("2_1lifp")]
 position = Vector2(40, 16)
 
-[node name="TableSquare24" parent="." unique_id=136039998 instance=ExtResource("2_1lifp")]
+[node name="TableSquare24" parent="Squares" unique_id=136039998 instance=ExtResource("2_1lifp")]
 position = Vector2(56, 16)
 
-[node name="TableSquare25" parent="." unique_id=1629998145 instance=ExtResource("2_1lifp")]
+[node name="TableSquare25" parent="Squares" unique_id=1629998145 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, 0)
 
-[node name="TableSquare26" parent="." unique_id=422390484 instance=ExtResource("2_1lifp")]
+[node name="TableSquare26" parent="Squares" unique_id=422390484 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, 0)
 
-[node name="TableSquare27" parent="." unique_id=519453760 instance=ExtResource("2_1lifp")]
+[node name="TableSquare27" parent="Squares" unique_id=519453760 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, 0)
 
-[node name="TableSquare28" parent="." unique_id=1319789048 instance=ExtResource("2_1lifp")]
+[node name="TableSquare28" parent="Squares" unique_id=1319789048 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, 0)
 
-[node name="TableSquare29" parent="." unique_id=536822327 instance=ExtResource("2_1lifp")]
+[node name="TableSquare29" parent="Squares" unique_id=536822327 instance=ExtResource("2_1lifp")]
 position = Vector2(8, 0)
 
-[node name="TableSquare30" parent="." unique_id=2144242161 instance=ExtResource("2_1lifp")]
+[node name="TableSquare30" parent="Squares" unique_id=2144242161 instance=ExtResource("2_1lifp")]
 position = Vector2(24, 0)
 
-[node name="TableSquare31" parent="." unique_id=1022069236 instance=ExtResource("2_1lifp")]
+[node name="TableSquare31" parent="Squares" unique_id=1022069236 instance=ExtResource("2_1lifp")]
 position = Vector2(40, 0)
 
-[node name="TableSquare32" parent="." unique_id=405696824 instance=ExtResource("2_1lifp")]
+[node name="TableSquare32" parent="Squares" unique_id=405696824 instance=ExtResource("2_1lifp")]
 position = Vector2(56, 0)
 
-[node name="TableSquare33" parent="." unique_id=610886076 instance=ExtResource("2_1lifp")]
+[node name="TableSquare33" parent="Squares" unique_id=610886076 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, -16)
 
-[node name="TableSquare34" parent="." unique_id=122415360 instance=ExtResource("2_1lifp")]
+[node name="TableSquare34" parent="Squares" unique_id=122415360 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, -16)
 
-[node name="TableSquare35" parent="." unique_id=1575233034 instance=ExtResource("2_1lifp")]
+[node name="TableSquare35" parent="Squares" unique_id=1575233034 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, -16)
 
-[node name="TableSquare36" parent="." unique_id=1863203838 instance=ExtResource("2_1lifp")]
+[node name="TableSquare36" parent="Squares" unique_id=1863203838 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, -16)
 
-[node name="TableSquare37" parent="." unique_id=277364330 instance=ExtResource("2_1lifp")]
+[node name="TableSquare37" parent="Squares" unique_id=277364330 instance=ExtResource("2_1lifp")]
 position = Vector2(8, -16)
 
-[node name="TableSquare38" parent="." unique_id=1186634968 instance=ExtResource("2_1lifp")]
+[node name="TableSquare38" parent="Squares" unique_id=1186634968 instance=ExtResource("2_1lifp")]
 position = Vector2(24, -16)
 
-[node name="TableSquare39" parent="." unique_id=1778080681 instance=ExtResource("2_1lifp")]
+[node name="TableSquare39" parent="Squares" unique_id=1778080681 instance=ExtResource("2_1lifp")]
 position = Vector2(40, -16)
 
-[node name="TableSquare40" parent="." unique_id=405129927 instance=ExtResource("2_1lifp")]
+[node name="TableSquare40" parent="Squares" unique_id=405129927 instance=ExtResource("2_1lifp")]
 position = Vector2(56, -16)
 
-[node name="TableSquare41" parent="." unique_id=685277748 instance=ExtResource("2_1lifp")]
+[node name="TableSquare41" parent="Squares" unique_id=685277748 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, -32)
 
-[node name="TableSquare42" parent="." unique_id=1825191610 instance=ExtResource("2_1lifp")]
+[node name="TableSquare42" parent="Squares" unique_id=1825191610 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, -32)
 
-[node name="TableSquare43" parent="." unique_id=625744108 instance=ExtResource("2_1lifp")]
+[node name="TableSquare43" parent="Squares" unique_id=625744108 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, -32)
 
-[node name="TableSquare44" parent="." unique_id=1957874432 instance=ExtResource("2_1lifp")]
+[node name="TableSquare44" parent="Squares" unique_id=1957874432 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, -32)
 
-[node name="TableSquare45" parent="." unique_id=1273030728 instance=ExtResource("2_1lifp")]
+[node name="TableSquare45" parent="Squares" unique_id=1273030728 instance=ExtResource("2_1lifp")]
 position = Vector2(8, -32)
 
-[node name="TableSquare46" parent="." unique_id=122815408 instance=ExtResource("2_1lifp")]
+[node name="TableSquare46" parent="Squares" unique_id=122815408 instance=ExtResource("2_1lifp")]
 position = Vector2(24, -32)
 
-[node name="TableSquare47" parent="." unique_id=1497647593 instance=ExtResource("2_1lifp")]
+[node name="TableSquare47" parent="Squares" unique_id=1497647593 instance=ExtResource("2_1lifp")]
 position = Vector2(40, -32)
 
-[node name="TableSquare48" parent="." unique_id=1558330725 instance=ExtResource("2_1lifp")]
+[node name="TableSquare48" parent="Squares" unique_id=1558330725 instance=ExtResource("2_1lifp")]
 position = Vector2(56, -32)
 
-[node name="TableSquare49" parent="." unique_id=950241586 instance=ExtResource("2_1lifp")]
+[node name="TableSquare49" parent="Squares" unique_id=950241586 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, -48)
 
-[node name="TableSquare50" parent="." unique_id=1970676267 instance=ExtResource("2_1lifp")]
+[node name="TableSquare50" parent="Squares" unique_id=1970676267 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, -48)
 
-[node name="TableSquare51" parent="." unique_id=993555873 instance=ExtResource("2_1lifp")]
+[node name="TableSquare51" parent="Squares" unique_id=993555873 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, -48)
 
-[node name="TableSquare52" parent="." unique_id=1569603587 instance=ExtResource("2_1lifp")]
+[node name="TableSquare52" parent="Squares" unique_id=1569603587 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, -48)
 
-[node name="TableSquare53" parent="." unique_id=2104943970 instance=ExtResource("2_1lifp")]
+[node name="TableSquare53" parent="Squares" unique_id=2104943970 instance=ExtResource("2_1lifp")]
 position = Vector2(8, -48)
 
-[node name="TableSquare54" parent="." unique_id=811192641 instance=ExtResource("2_1lifp")]
+[node name="TableSquare54" parent="Squares" unique_id=811192641 instance=ExtResource("2_1lifp")]
 position = Vector2(24, -48)
 
-[node name="TableSquare55" parent="." unique_id=490373045 instance=ExtResource("2_1lifp")]
+[node name="TableSquare55" parent="Squares" unique_id=490373045 instance=ExtResource("2_1lifp")]
 position = Vector2(40, -48)
 
-[node name="TableSquare56" parent="." unique_id=548406188 instance=ExtResource("2_1lifp")]
+[node name="TableSquare56" parent="Squares" unique_id=548406188 instance=ExtResource("2_1lifp")]
 position = Vector2(56, -48)
 
-[node name="TableSquare57" parent="." unique_id=1435649574 instance=ExtResource("2_1lifp")]
+[node name="TableSquare57" parent="Squares" unique_id=1435649574 instance=ExtResource("2_1lifp")]
 position = Vector2(-56, -64)
 
-[node name="TableSquare58" parent="." unique_id=1990955917 instance=ExtResource("2_1lifp")]
+[node name="TableSquare58" parent="Squares" unique_id=1990955917 instance=ExtResource("2_1lifp")]
 position = Vector2(-40, -64)
 
-[node name="TableSquare59" parent="." unique_id=536981649 instance=ExtResource("2_1lifp")]
+[node name="TableSquare59" parent="Squares" unique_id=536981649 instance=ExtResource("2_1lifp")]
 position = Vector2(-24, -64)
 
-[node name="TableSquare60" parent="." unique_id=74752253 instance=ExtResource("2_1lifp")]
+[node name="TableSquare60" parent="Squares" unique_id=74752253 instance=ExtResource("2_1lifp")]
 position = Vector2(-8, -64)
 
-[node name="TableSquare61" parent="." unique_id=444793476 instance=ExtResource("2_1lifp")]
+[node name="TableSquare61" parent="Squares" unique_id=444793476 instance=ExtResource("2_1lifp")]
 position = Vector2(8, -64)
 
-[node name="TableSquare62" parent="." unique_id=1590638547 instance=ExtResource("2_1lifp")]
+[node name="TableSquare62" parent="Squares" unique_id=1590638547 instance=ExtResource("2_1lifp")]
 position = Vector2(24, -64)
 
-[node name="TableSquare63" parent="." unique_id=933364015 instance=ExtResource("2_1lifp")]
+[node name="TableSquare63" parent="Squares" unique_id=933364015 instance=ExtResource("2_1lifp")]
 position = Vector2(40, -64)
 
-[node name="TableSquare64" parent="." unique_id=219671592 instance=ExtResource("2_1lifp")]
+[node name="TableSquare64" parent="Squares" unique_id=219671592 instance=ExtResource("2_1lifp")]
 position = Vector2(56, -64)
