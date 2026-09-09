@@ -43,62 +43,36 @@ class ChessInitialPieces:
 	func white_initial_pieces() -> Array[ChessBasePiece]:
 		var pieces: Array[ChessBasePiece]
 		pieces.append_array([
-			_create_rook(Vector2i(1,1)),
-			_create_knight(Vector2i(1,2)),
-			_create_bishop(Vector2i(1,3)),
-			_create_queen(Vector2i(1,4)),
-			_create_king(Vector2i(1,5)),
-			_create_bishop(Vector2i(1,6)),
-			_create_knight(Vector2i(1,7)),
-			_create_rook(Vector2i(1,8))
+			_add_piece(Rook.new(), Vector2i(1,1)),
+			_add_piece(Knight.new(), Vector2i(1,2)),
+			_add_piece(Bishop.new(), Vector2i(1,3)),
+			_add_piece(Queen.new(), Vector2i(1,4)),
+			_add_piece(King.new(), Vector2i(1,5)),
+			_add_piece(Bishop.new(), Vector2i(1,6)),
+			_add_piece(Knight.new(), Vector2i(1,7)),
+			_add_piece(Rook.new(), Vector2i(1,8))
 		])
 		for i in range(1, 9):
-			pieces.append(_create_pawn(Vector2i(2,i)))
+			pieces.append(_add_piece(Pawn.new(), Vector2i(2,i)))
 		return pieces
 	
 	func black_initial_pieces() -> Array[ChessBasePiece]:
 		var pieces: Array[ChessBasePiece]
 		pieces.append_array([
-			_create_rook(Vector2i(8,1)),
-			_create_knight(Vector2i(8,2)),
-			_create_bishop(Vector2i(8,3)),
-			_create_queen(Vector2i(8,4)),
-			_create_king(Vector2i(8,5)),
-			_create_bishop(Vector2i(8,6)),
-			_create_knight(Vector2i(8,7)),
-			_create_rook(Vector2i(8,8))
+			_add_piece(Rook.new(), Vector2i(8,1)),
+			_add_piece(Knight.new(), Vector2i(8,2)),
+			_add_piece(Bishop.new(), Vector2i(8,3)),
+			_add_piece(Queen.new(), Vector2i(8,4)),
+			_add_piece(King.new(), Vector2i(8,5)),
+			_add_piece(Bishop.new(), Vector2i(8,6)),
+			_add_piece(Knight.new(), Vector2i(8,7)),
+			_add_piece(Rook.new(), Vector2i(8,8))
 		])
 		for i in range(1, 9):
-			pieces.append(_create_pawn(Vector2i(7,i)))
+			pieces.append(_add_piece(Pawn.new(), Vector2i(7,i)))
 		return pieces
 	
-	# --- É MELHOR IMPLEMENTAR UMA FUNÇÂO QUE FAZ ISSO EM ChessBasePiece ---
-	func _create_pawn(coordinate: Vector2i) -> Pawn: 
-		var pawn: Pawn = Pawn.new()
-		ChessEngine.instance.chessboard.move_piece(pawn, coordinate)
-		return pawn
+	func _add_piece(piece: ChessBasePiece, coordinate: Vector2i) -> ChessBasePiece:
+		ChessEngine.instance.chessboard.move_piece(piece, coordinate)
+		return piece
 	
-	func _create_bishop(coordinate: Vector2i) -> Bishop:
-		var bishop: Bishop = Bishop.new()
-		ChessEngine.instance.chessboard.move_piece(bishop, coordinate)
-		return bishop
-	
-	func _create_knight(coordinate: Vector2i) -> Knight:
-		var knight: Knight = Knight.new()
-		ChessEngine.instance.chessboard.move_piece(knight, coordinate)
-		return knight
-	
-	func _create_rook(coordinate: Vector2i) -> Rook:
-		var rook: Rook = Rook.new()
-		ChessEngine.instance.chessboard.move_piece(rook, coordinate)
-		return rook
-	
-	func _create_king(coordinate: Vector2i) -> King:
-		var king: King = King.new()
-		ChessEngine.instance.chessboard.move_piece(king, coordinate)
-		return king
-	
-	func _create_queen(coordinate: Vector2i) -> Queen:
-		var queen: Queen = Queen.new()
-		ChessEngine.instance.chessboard.move_piece(queen, coordinate)
-		return queen
