@@ -2,5 +2,10 @@
 extends Object
 class_name ChessEngine
 
+var chessboard: Chessboard = Chessboard.new()
+
 func _init() -> void:
 	pass
+
+func _to_string() -> String:
+	return str(chessboard)

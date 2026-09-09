@@ -30,6 +30,8 @@ func _to_string() -> String:
 	var board_str: String = ""
 	for square in board:
 		board_str += str(square)
+		if square.coordinate.y % COLUMNS == 0:
+			board_str += "\n"
 	return board_str
 
 

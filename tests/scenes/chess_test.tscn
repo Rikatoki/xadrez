@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://d4a8j6atfrqte"]
 
+[ext_resource type="Script" uid="uid://b8nlsumq4sova" path="res://tests/scripts/ChessTest.gd" id="1_f4caj"]
+
 [node name="ChessTest" type="Node" unique_id=851504971]
+script = ExtResource("1_f4caj")
