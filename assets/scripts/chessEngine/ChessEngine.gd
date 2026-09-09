@@ -72,7 +72,8 @@ class ChessInitialPieces:
 			pieces.append(_create_pawn(Vector2i(7,i)))
 		return pieces
 	
-	func _create_pawn(coordinate: Vector2i) -> Pawn:
+	# --- É MELHOR IMPLEMENTAR UMA FUNÇÂO QUE FAZ ISSO EM ChessBasePiece ---
+	func _create_pawn(coordinate: Vector2i) -> Pawn: 
 		var pawn: Pawn = Pawn.new()
 		ChessEngine.instance.chessboard.move_piece(pawn, coordinate)
 		return pawn
