@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bjyi5qvx353pb"]
 
 [ext_resource type="Script" uid="uid://c5burhlx3xc6r" path="res://assets/scripts/gui/SceneButton.gd" id="1_omajv"]
-[ext_resource type="PackedScene" uid="uid://rjdr1yigkpch" path="res://assets/scenes/chess_table.tscn" id="2_3bom3"]
 [ext_resource type="Script" uid="uid://c00lyjajoypv8" path="res://assets/scripts/gui/ExitButton.gd" id="2_etq7q"]
+[ext_resource type="PackedScene" uid="uid://d4a8j6atfrqte" path="res://tests/scenes/chess_test.tscn" id="2_vgc5d"]
 
 [node name="TestMenu" type="Control" unique_id=1303519598]
 layout_mode = 3
@@ -40,7 +40,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 text = "Inicar Teste"
 script = ExtResource("1_omajv")
-go_to = ExtResource("2_3bom3")
+go_to = ExtResource("2_vgc5d")
 
 [node name="QuitButton" type="Button" parent="Buttons" unique_id=1079028508]
 layout_mode = 2

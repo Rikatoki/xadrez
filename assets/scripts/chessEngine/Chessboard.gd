@@ -37,6 +37,7 @@ func _to_string() -> String:
 
 class BoardSquare:
 	var coordinate: Vector2i
+	
 	func _init(_coordinate: Vector2i) -> void:
 		coordinate = _coordinate
 	
