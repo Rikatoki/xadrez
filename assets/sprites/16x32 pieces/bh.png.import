@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8fs03o4ythh2"
-path="res://.godot/imported/B_Rook.png-300fc5413949ec4ab2b69ff0fb0df93f.ctex"
+uid="uid://b2itwmpa8yli4"
+path="res://.godot/imported/bh.png-8a08c5294c21183828a81e8d716899b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/16x32 pieces/B_Rook.png"
-dest_files=["res://.godot/imported/B_Rook.png-300fc5413949ec4ab2b69ff0fb0df93f.ctex"]
+source_file="res://assets/sprites/16x32 pieces/bh.png"
+dest_files=["res://.godot/imported/bh.png-8a08c5294c21183828a81e8d716899b1.ctex"]
 
 [params]
 
