@@ -6,6 +6,7 @@ var piece_coordinate: Vector2i = Vector2i.ZERO
 
 var piece_team: ChessEnums.ChessTeam
 
+
 func set_coordinate(coordinate: Vector2i) -> ChessBasePiece:
 	piece_coordinate = coordinate
 	return self

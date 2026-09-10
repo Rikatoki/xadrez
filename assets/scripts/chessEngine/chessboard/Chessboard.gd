@@ -20,8 +20,8 @@ func _create_board() -> void:
 
 
 func move_piece(piece: ChessBasePiece, to: Vector2i) -> Chessboard:
-	if to == Vector2i.ZERO:
-		push_error("Não há uma posição 0.")
+	if not _is_valid_coordinate(to):
+		push_error("Coordernadas fora do padrão: {0}".format([to]))
 		return self
 	if piece.on_board():
 		remove_piece(piece)
@@ -35,7 +35,7 @@ func move_piece(piece: ChessBasePiece, to: Vector2i) -> Chessboard:
 func remove_piece(piece: ChessBasePiece) -> Chessboard:
 	var square: BoardSquare = get_square_by_coordinate(piece.piece_coordinate)
 	if square == null:
-		push_error("Peça não encontrada na coordenada: {0}".format([piece.piece_coordinate]))
+		push_error("Peça não encontrada no tabuleiro: {0}".format([piece.piece_coordinate]))
 		return self
 	square.piece_in_square = null
 	piece.set_coordinate(Vector2i.ZERO)
@@ -46,10 +46,17 @@ func get_square_by_coordinate(coordinate: Vector2i) -> BoardSquare:
 	if coordinate == Vector2i.ZERO:
 		push_error("A peça não está no tabuleiro.")
 		return null
+	if not _is_valid_coordinate(coordinate):
+		push_error("Coordenada fora do padrão: {0}".format([coordinate]))
+		return null
 	for square in board:
 		if square.coordinate == coordinate:
 			return square
 	return null
+
+
+func _is_valid_coordinate(coor: Vector2i) -> bool:
+	return coor.x > 0 and coor.y > 0 and coor.x <= LINES and coor.y <= COLUMNS
 
 ## Para testes.
 func _to_string() -> String:
@@ -59,25 +66,3 @@ func _to_string() -> String:
 		if square.coordinate.y % COLUMNS == 0:
 			board_str += "\n"
 	return board_str
-
-
-class BoardSquare:
-	var coordinate: Vector2i
-	var piece_in_square: ChessBasePiece
-	
-	func _init(_coordinate: Vector2i) -> void:
-		coordinate = _coordinate
-	
-	
-	func has_piece() -> bool:
-		return piece_in_square != null
-	
-	## Para testes.
-	func _to_string() -> String:
-		var square_str: String = "["
-		if has_piece():
-			square_str += str(piece_in_square)
-		else:
-			square_str += "  "
-		square_str += "]"
-		return square_str
