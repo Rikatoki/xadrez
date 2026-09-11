@@ -3,24 +3,19 @@ class_name Chessboard
 
 var board: Array[BoardSquare]
 
-const LINES: int = 8
-
-const COLUMNS: int = 8
-
-
 func _init() -> void:
 	_create_board()
 
 
 func _create_board() -> void:
 	board = []
-	for line in range(1, LINES + 1):
-		for column in range(1, COLUMNS + 1):
+	for line in range(1, ChessVariables.LINES + 1):
+		for column in range(1, ChessVariables.COLUMNS + 1):
 			board.append(BoardSquare.new(Vector2i(line, column)))
 
 
 func move_piece(piece: ChessBasePiece, to: Vector2i) -> Chessboard:
-	if not _is_valid_coordinate(to):
+	if not is_valid_coordinate(to):
 		push_error("Coordernadas fora do padrão: {0}".format([to]))
 		return self
 	if piece.on_board():
@@ -46,7 +41,7 @@ func get_square_by_coordinate(coordinate: Vector2i) -> BoardSquare:
 	if coordinate == Vector2i.ZERO:
 		push_error("A peça não está no tabuleiro.")
 		return null
-	if not _is_valid_coordinate(coordinate):
+	if not is_valid_coordinate(coordinate):
 		push_error("Coordenada fora do padrão: {0}".format([coordinate]))
 		return null
 	for square in board:
@@ -55,14 +50,14 @@ func get_square_by_coordinate(coordinate: Vector2i) -> BoardSquare:
 	return null
 
 
-func _is_valid_coordinate(coor: Vector2i) -> bool:
-	return coor.x > 0 and coor.y > 0 and coor.x <= LINES and coor.y <= COLUMNS
+func is_valid_coordinate(coor: Vector2i) -> bool:
+	return coor.x > 0 and coor.y > 0 and coor.x <= ChessVariables.LINES and coor.y <= ChessVariables.COLUMNS
 
 ## Para testes.
 func _to_string() -> String:
 	var board_str: String = ""
 	for square in board:
 		board_str += str(square)
-		if square.coordinate.y % COLUMNS == 0:
+		if square.coordinate.y % ChessVariables.COLUMNS == 0:
 			board_str += "\n"
 	return board_str

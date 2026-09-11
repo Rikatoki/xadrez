@@ -7,7 +7,7 @@ Nome do jogo: ""
 
 Gênero: Estratégia Tabuleiro
 
-Plataformas: Windows Web
+Plataformas: Web
 
 ---
 
