@@ -19,11 +19,15 @@ func _init() -> void:
 
 ## Inicia o [ChessEngine] para iniciar um novo jogo.
 func new_game(white: ChessBasePlayer, black: ChessBasePlayer) -> ChessEngine:
-	setup_players(white, black)
+	_setup_players(white, black)
 	return self
 
 
-func setup_players(white: ChessBasePlayer, black: ChessBasePlayer) -> void:
+func next_turn() -> void:
+	return
+
+
+func _setup_players(white: ChessBasePlayer, black: ChessBasePlayer) -> void:
 	white_player = white.set_player_team(ChessEnums.ChessTeam.WHITE)
 	white_player.set_player_pieces(piece_factory.white_initial_pieces())
 	black_player = black.set_player_team(ChessEnums.ChessTeam.BLACK)
