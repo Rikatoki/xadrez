@@ -73,6 +73,19 @@ func around_move(from: Vector2i) -> Array[Vector2i]:
 	return moves
 
 
+func knight_move(from: Vector2i) -> Array[Vector2i]:
+	var moves: Array[Vector2i] = []
+	_add_move(moves, Vector2i(from.x + 2, from.y + 1))
+	_add_move(moves, Vector2i(from.x + 2, from.y - 1))
+	_add_move(moves, Vector2i(from.x - 2, from.y + 1))
+	_add_move(moves, Vector2i(from.x - 2, from.y - 1))
+	_add_move(moves, Vector2i(from.x + 1, from.y + 2))
+	_add_move(moves, Vector2i(from.x - 1, from.y + 2))
+	_add_move(moves, Vector2i(from.x + 1, from.y - 2))
+	_add_move(moves, Vector2i(from.x - 1, from.y - 2))
+	return moves
+
+
 func _add_move(moves: Array, move: Vector2i) -> void:
 	if _valid_move(move):
 		moves.append(move)
