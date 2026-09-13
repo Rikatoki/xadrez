@@ -86,6 +86,11 @@ func knight_move(from: Vector2i) -> Array[Vector2i]:
 	return moves
 
 
+func pawn_move(from: Vector2i, front: int = 1) -> Array[Vector2i]:
+	var moves: Array[Vector2i] = []
+	
+	return moves
+
 func _add_move(moves: Array, move: Vector2i) -> void:
 	if _valid_move(move):
 		moves.append(move)
