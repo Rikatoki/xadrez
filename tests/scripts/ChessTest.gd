@@ -2,8 +2,8 @@ extends Node
 
 var chess_engine: ChessEngine = ChessEngine.new()
 
-var player1: ChessBasePlayer = ChessBasePlayer.new()
-var player2: ChessBasePlayer = ChessBasePlayer.new()
+var player1: ChessPlayer = ChessPlayer.new()
+var player2: ChessPlayer = ChessPlayer.new()
 
 
 func _ready() -> void:

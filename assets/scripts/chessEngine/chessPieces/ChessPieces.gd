@@ -1,6 +1,6 @@
 @abstract
 extends Object
-class_name ChessBasePiece
+class_name ChessPiece
 
 var piece_coordinate: Vector2i = Vector2i.ZERO
 
@@ -11,7 +11,7 @@ var has_moved: bool = false
 @abstract
 func get_movements() -> Array[Vector2i]
 
-func set_coordinate(coordinate: Vector2i) -> ChessBasePiece:
+func set_coordinate(coordinate: Vector2i) -> ChessPiece:
 	piece_coordinate = coordinate
 	return self
 

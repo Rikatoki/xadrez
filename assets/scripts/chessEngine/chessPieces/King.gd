@@ -1,4 +1,4 @@
-extends ChessBasePiece
+extends ChessPiece
 class_name King
 
 func get_movements() -> Array[Vector2i]:

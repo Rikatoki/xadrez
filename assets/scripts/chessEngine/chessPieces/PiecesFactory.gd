@@ -2,8 +2,8 @@ extends RefCounted
 class_name ChessPieceFactory
 
 
-func white_initial_pieces() -> Array[ChessBasePiece]:
-	var pieces: Array[ChessBasePiece]
+func white_initial_pieces() -> Array[ChessPiece]:
+	var pieces: Array[ChessPiece]
 	pieces.append_array([
 		_add_piece(Rook.new(), Vector2i(1,1)),
 		_add_piece(Knight.new(), Vector2i(1,2)),
@@ -19,8 +19,8 @@ func white_initial_pieces() -> Array[ChessBasePiece]:
 	return pieces
 
 
-func black_initial_pieces() -> Array[ChessBasePiece]:
-	var pieces: Array[ChessBasePiece]
+func black_initial_pieces() -> Array[ChessPiece]:
+	var pieces: Array[ChessPiece]
 	pieces.append_array([
 		_add_piece(Rook.new(), Vector2i(8,1)),
 		_add_piece(Knight.new(), Vector2i(8,2)),
@@ -36,6 +36,6 @@ func black_initial_pieces() -> Array[ChessBasePiece]:
 	return pieces
 
 
-func _add_piece(piece: ChessBasePiece, coordinate: Vector2i) -> ChessBasePiece:
+func _add_piece(piece: ChessPiece, coordinate: Vector2i) -> ChessPiece:
 	ChessEngine.instance.chessboard.move_piece(piece, coordinate)
 	return piece

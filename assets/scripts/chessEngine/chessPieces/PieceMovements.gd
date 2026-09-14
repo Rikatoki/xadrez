@@ -96,12 +96,12 @@ func pawn_move(from: Vector2i, times: int = 1) -> Array[Vector2i]:
 		if _can_continue(move):
 			moves.append(move)
 	if chessboard.is_valid_coordinate(diagonal_l):
-		var square: BoardSquare = chessboard.get_square_by_coordinate(diagonal_l)
-		if square.has_piece() and not square.piece_in_square.is_same_side(piece_side):
+		var piece: ChessPiece = chessboard.get_piece_by_coordinate(diagonal_l)
+		if piece != null and not piece.is_same_side(piece_side):
 			moves.append(diagonal_l)
 	if chessboard.is_valid_coordinate(diagonal_r):
-		var square: BoardSquare = chessboard.get_square_by_coordinate(diagonal_r)
-		if square.has_piece() and not square.piece_in_square.is_same_side(piece_side):
+		var piece: ChessPiece = chessboard.get_piece_by_coordinate(diagonal_r)
+		if piece != null and not piece.is_same_side(piece_side):
 			moves.append(diagonal_r)
 	return moves
 
@@ -112,11 +112,8 @@ func _add_move(moves: Array, move: Vector2i) -> void:
 
 # Centralização da regra de validação de um quadrado
 func _valid_move(coord: Vector2i) -> bool:
-	var is_valid: bool = false
-	if chessboard.is_valid_coordinate(coord):
-		var square: BoardSquare = chessboard.get_square_by_coordinate(coord)
-		is_valid = not square.has_piece() or not square.piece_in_square.is_same_side(piece_side)
-	return is_valid
+	var piece_in_coord: ChessPiece = chessboard.get_piece_by_coordinate(coord)
+	return chessboard.is_valid_coordinate(coord) and (piece_in_coord == null or not piece_in_coord.is_same_side(piece_side))
 
 func _can_continue(coord: Vector2i) -> bool:
-	return chessboard.is_valid_coordinate(coord) and not chessboard.get_square_by_coordinate(coord).has_piece()
+	return chessboard.is_valid_coordinate(coord) and not chessboard.has_piece(coord)

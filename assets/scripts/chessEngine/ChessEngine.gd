@@ -8,9 +8,9 @@ var chessboard: Chessboard = Chessboard.new()
 
 var piece_factory: ChessPieceFactory = ChessPieceFactory.new()
 
-var white_player: ChessBasePlayer
+var white_player: ChessPlayer
 
-var black_player: ChessBasePlayer
+var black_player: ChessPlayer
 
 # É preciso criar a variável que determina qual é o turno atual.
 
@@ -18,7 +18,7 @@ func _init() -> void:
 	instance = self
 
 ## Inicia o [ChessEngine] para iniciar um novo jogo.
-func new_game(white: ChessBasePlayer, black: ChessBasePlayer) -> ChessEngine:
+func new_game(white: ChessPlayer, black: ChessPlayer) -> ChessEngine:
 	_setup_players(white, black)
 	return self
 
@@ -27,7 +27,7 @@ func next_turn() -> void:
 	return
 
 
-func _setup_players(white: ChessBasePlayer, black: ChessBasePlayer) -> void:
+func _setup_players(white: ChessPlayer, black: ChessPlayer) -> void:
 	white_player = white.set_player_team(ChessEnums.ChessTeam.WHITE)
 	white_player.set_player_pieces(piece_factory.white_initial_pieces())
 	black_player = black.set_player_team(ChessEnums.ChessTeam.BLACK)
