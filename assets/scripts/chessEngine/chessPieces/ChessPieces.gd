@@ -8,6 +8,9 @@ var piece_team: ChessEnums.ChessTeam
 
 var has_moved: bool = false
 
+@abstract
+func get_movements() -> Array[Vector2i]
+
 func set_coordinate(coordinate: Vector2i) -> ChessBasePiece:
 	piece_coordinate = coordinate
 	return self
