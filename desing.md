@@ -51,10 +51,21 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 - Centralizar todo o conceito de tabuleiro do xadrez.
 
 **Propriedades:**
-- ***board (Dictionary[Vector2i, object])***: Representa o tabuleiro
+- *board Dictionary[Vector2i, object]*: Representa o tabuleiro
 
 ##### ***Como vai funcionar?***
 *board* será um dicionário que conterá coordenadas como chave, e a peça como valor. Toda a interação com os squares - como "Tem uma peça nessa coordenada?", será feita por meio do **Chessboard**.
+
+---
+
+#### *ChessPlayer*
+**Responsabilidades:**
+- Representa o jogador do xadrez.
+- Centralização da conversa entre o jogador - seja IA ou um humano, com o ChessEngine.
+
+**Propriedades:**
+- *team [ChessEnums](#chessenums).ChessTeam*
+- *pieces Array[[ChessPieces]](#chesspieces)*
 
 ---
 
@@ -64,8 +75,12 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 - Representa cada peça
 
 **Propriedades:**
-- ***coordinate***
-- ***team***
+- *coordinate Vector2i*
+- *team [ChessEnums](#chessenums).ChessTeam*
+- *has_moved bool*
+
+##### ***Como vai funcionar?***
+**ChessPiece** será uma representação das peças, as movimentações e identificação de cada peça será dada por meio dele.
 
 ---
 
@@ -74,8 +89,8 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 **Responsabilidade:** Centralizar as variáveis/constantes na qual 2 ou mais classes usarão.
 
 **Propriedades:**
-- ***LINES***: A quantidade máxima de linhas do tabuleiro.
-- ***COLUMNS***: A quantidade máxima de colunas do tabuleiro.
+- *LINES int*: A quantidade máxima de linhas do tabuleiro.
+- *COLUMNS int*: A quantidade máxima de colunas do tabuleiro.
 
 ---
 
@@ -84,7 +99,7 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 **Responsabilidade:** Centralizar as enumerações na qual 2 ou mais classes usarão.
 
 **Propriedades:**
-- ***ChessTeam***: Representa o lado do time - WHITE, BLACK.
+- *ChessTeam [WHITE, BLACK]*: Representa o lado do time.
 
 ---
 
