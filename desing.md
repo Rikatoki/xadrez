@@ -45,7 +45,7 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 
 #### *Chessboard*
 
-**Responsabilidades**:
+**Responsabilidades:**
 - Contém o conjunto de casas/squares.
 - Servir de interface para a interação com cada square.
 - Centralizar todo o conceito de tabuleiro do xadrez.
@@ -55,6 +55,17 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 
 ##### ***Como vai funcionar?***
 *board* será um dicionário que conterá coordenadas como chave, e a peça como valor. Toda a interação com os squares - como "Tem uma peça nessa coordenada?", será feita por meio do **Chessboard**.
+
+---
+
+#### *ChessPieces*
+
+**Responsabilidades:**
+- Representa cada peça
+
+**Propriedades:**
+- ***coordinate***
+- ***team***
 
 ---
 
@@ -86,7 +97,7 @@ Essa classe representa a ação da movimentação.
 ***Implementação***: Ao invés das Piece's entregar uma lista de coordenadas, elas criam uma lista de PieceMove. Então, o ChessEngine receberá o PieceMove e o executará usando uma função base do mesmo. 
 
 ***Movitos para implementar***:  
-- É possível facilitar a idêntificação do tipo da ação que a peça irá fazer, considerando que cada tipo herdará de PieceMove e ficará como: MoveKillPiece (Algo assim). 
+- É possível facilitar a idêntificação do tipo da ação que a peça irá fazer, considerando que cada tipo herdará de PieceMove e ficará como: CapturePiece.
 - Abstrai o conceito de ação de uma peça.
 
 --- 
