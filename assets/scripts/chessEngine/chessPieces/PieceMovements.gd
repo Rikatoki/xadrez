@@ -86,10 +86,25 @@ func knight_move(from: Vector2i) -> Array[Vector2i]:
 	return moves
 
 
-func pawn_move(from: Vector2i, front: int = 1) -> Array[Vector2i]:
+func pawn_move(from: Vector2i, times: int = 1) -> Array[Vector2i]:
 	var moves: Array[Vector2i] = []
-	
+	var direction: int = 1 if piece_side == GameVariables.ChessSide.WHITE else -1
+	var diagonal_l: Vector2i = Vector2i(from.x + 1 * direction, from.y - 1)
+	var diagonal_r: Vector2i = Vector2i(from.x + 1 * direction, from.y + 1)
+	for i in range(1, times + 1):
+		var move = Vector2i(from.x + i * direction, from.y)
+		if _can_continue(move):
+			moves.append(move)
+	if chessboard.is_valid_coordinate(diagonal_l):
+		var square: BoardSquare = chessboard.get_square_by_coordinate(diagonal_l)
+		if square.has_piece() and not square.piece_in_square.is_same_side(piece_side):
+			moves.append(diagonal_l)
+	if chessboard.is_valid_coordinate(diagonal_r):
+		var square: BoardSquare = chessboard.get_square_by_coordinate(diagonal_r)
+		if square.has_piece() and not square.piece_in_square.is_same_side(piece_side):
+			moves.append(diagonal_r)
 	return moves
+
 
 func _add_move(moves: Array, move: Vector2i) -> void:
 	if _valid_move(move):
