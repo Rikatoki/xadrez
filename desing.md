@@ -32,7 +32,7 @@ Toda a lógica principal do jogo ficará aqui, completamente separado da interfa
 
 Classe central da lógica do xadrez, funcionando como um núcleo. Será composta por várias classes - cada uma com um propósito, conectando elas.
 
-***Funções:***
+**Responsabilidades:**
 * Reduzir o acoplamento entre os módulos/classes sendo uma ponte para a comunicação entre os mesmos.
 * Centralizar a lógica do xadrez numa única interface. 
 * Conterá todas as etapas do xadrez:
@@ -40,6 +40,14 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 	2. Coreloop *(next_turn, sistema de rodadas)*
 	3. Regras do xadrez *(check, checkmate, etc.)*
 	4. Conclusão *(relatório)*
+
+---
+
+#### *ChessRules*
+
+**Responsabilidades:**
+- Centralização das lógicas do xadrez
+- Conterá todas as regras macro do xadrez, como check/checkmate.
 
 ---
 
@@ -80,7 +88,16 @@ Classe central da lógica do xadrez, funcionando como um núcleo. Será composta
 - *has_moved bool*
 
 ##### ***Como vai funcionar?***
-**ChessPiece** será uma representação das peças, as movimentações e identificação de cada peça será dada por meio dele.
+**ChessPiece** será uma representação das peças, as movimentações, identificação de cada peça e regras especiais do mesmo.
+
+---
+
+#### *PieceMovements*
+**Responsabilidades:**
+- Centralizar a lógica de movimentação das peças.
+
+##### ***Como vai funcionar?***
+Toda a interação que envolva a movimentação de uma peça - seja a própria peça entregar suas possíveis movimentações ou então verificação de movimento (como check e checkmates), será por meio dessa classe.
 
 ---
 
