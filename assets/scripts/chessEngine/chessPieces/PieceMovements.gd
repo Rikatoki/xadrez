@@ -2,10 +2,11 @@ extends RefCounted
 class_name PieceMovements
 
 var piece_side: ChessEnums.ChessTeam
-var chessboard: Chessboard = ChessEngine.instance.chessboard
+var chessboard: Chessboard
 
-func _init(side: ChessEnums.ChessTeam) -> void:
+func _init(side: ChessEnums.ChessTeam, board: Chessboard = ChessEngine.instance.chessboard) -> void:
 	piece_side = side
+	chessboard = board
 
 # Movimento de cruz.
 func cross_move(from: Vector2i) -> Array[Vector2i]:

@@ -34,7 +34,7 @@ offset_right = 49.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+alignment = 1
 
 [node name="InitButton" type="Button" parent="Buttons" unique_id=952491959]
 layout_mode = 2

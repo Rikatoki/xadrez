@@ -12,7 +12,7 @@ var white_player: ChessPlayer
 
 var black_player: ChessPlayer
 
-# É preciso criar a variável que determina qual é o turno atual.
+var current_turn: ChessPlayer
 
 func _init() -> void:
 	instance = self
@@ -20,11 +20,16 @@ func _init() -> void:
 ## Inicia o [ChessEngine] para iniciar um novo jogo.
 func new_game(white: ChessPlayer, black: ChessPlayer) -> ChessEngine:
 	_setup_players(white, black)
+	current_turn = white_player
 	return self
 
 
 func next_turn() -> void:
 	return
+
+
+func victory() -> void:
+	pass
 
 
 func _setup_players(white: ChessPlayer, black: ChessPlayer) -> void:
