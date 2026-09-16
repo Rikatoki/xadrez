@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d4a8j6atfrqte"]
+
+[ext_resource type="Script" uid="uid://b8nlsumq4sova" path="res://tests/scripts/ChessTest.gd" id="1_f4caj"]
+
+[node name="ChessTest" type="Node" unique_id=851504971]
+script = ExtResource("1_f4caj")
+
+[node name="Timer" type="Timer" parent="." unique_id=879034904]
+wait_time = 27.279
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="end_test"]

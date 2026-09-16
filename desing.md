@@ -1,144 +1,139 @@
 # Game Desing Document (GDD)
-Nome do projeto: Aprendendo a criar jogos completos -- Xadrez
-Nome do jogo original: Xadrez
-Nome do jogo: ""
-Gênero: [Estratégia] [Tabuleiro]
-Plataformas: [Windows] [Web]
+Nome do projeto: Aprendendo a criar jogos completos
 
-## Sistemas principais
-Haverá uma clara diferença entre a lógica e a representação 2D do jogo, toda a parte 2D irá apenas traduzir o código.
-- Fluxo do jogo em código:
-	- Início do jogo:
-		ChessGame > (Cria as peças iniciais da entidade) ChessEntity (Cria o tabuleiro do xadrez) Chessboard (Coloca cada peça em sua posição inicial) Chessboard
-	- Jogando:
-		ChessEntity > (Seleciona peça na qual quer usar) ChessPiece (Retorna casas na qual pode interagir) ChessSquare (Seleciona a casa) ChessPiece (Passa a casa para a peça e ela faz sua lógica de interação) ChessPiece
-	- Progresso do jogo:
-		ChessGame > (Inicia a rodada da entidade) ChessEntity {Jogando} ChessRules (Verifica as regras do jogo e age de acordo) ChessGame (Vai para a próxima rodada se possível) ChessGame
-- Toda a lógica herdará de Object
-- Código gráfico herdará de Node2D e usará as classes criadas de Object
-Problemas principais:
-	* Como criar a mecânica de turnos? -> RESOLVeNDO
-	* Devo criar uma classe para representar as movimentações das peças?
-		Essa classe deverá receber a casa atual e as casas existentes, e a partir daí ela cria as casas na qual a peça poderá ir, usada de base para polimorfismo.
-	* Como que as ChessSquare podem ter coordenadas composta por colunas com letras e linhas com números?
-	* Devo entregar um relatório de fim da partida?
-		Resolve problema de não conhecer quem foi o vencedor
-		Pode conter informações gerais da partida
+Nome do jogo original: Xadrez
+
+Nome do jogo: ""
+
+Gênero: #Estratégia #Tabuleiro
+
+Plataformas: #Web
+
+---
+
+## *Sistemas principais*
+
+É necessário lembrar que as classes irá se expandir conforme a necessidade na produção.
+
+Dicas:
+1. Não tente fazer tudo de uma só vez, foque apenas em uma única coisa.
+2. As classes devem expandir comforme a necessidade.
+3. Tenha um bom nível de desing.
+
+---
 
 ### Lógica
 
-- Jogo do Xadrez (ChessGame) -> Node
-	- Representa o jogo
-	- Usa o ChessMatch // Lógica do jogo de xadrez
-	- Conecta a lógica com a interface
+Toda a lógica principal do jogo ficará aqui, completamente separado da interface gráfica.
 
-- Jogo do Xadrez (ChessMatch) -> Object
-	- Representa a parte lógica das particas
-	- Contém o sistema de turnos
-	- Usa os componentes
-	Atributos:
-		- Estado do jogo: IDLE, NEW_GAME, WHITE_TURN, BLACK_TURN, END_TURN, VITORIA, EMPATE
-		- Regras: ChessRules
-		- Jogador braco: ChessEntity
-		- Jogador preto:  ChessEntity
-		- Tabuleiro: Chessboard
-	Métodos:
-		- Novo jogo(branco: ChessEntity, preto: ChessEntity)
-			// Configura as entidades, cria e configura o Chessboard, cria o ChessRules. Cria e determina as posições iniciais das peças de cada entidade.
-		- Turno branco
-			// Realiza o turno do jogador branco
-		- Turno preto
-			// Realiza o turno do jogador preto
-		- Fim do turno
-			// Chamada após cada fim de turno, faz as verificações de regras e etc. Decide o próximo estado de acordo com condições
-		- Vitoria(vencedor: ChessEntity)
-		 	// Fim do jogo: Checkmate
-		- Empate
-			// Fim do jogo: Empate
-- Entidade do Xadrez (ChessEntity) -> Object
-	- Representa a entidade que jogará o xadrez
-	- Cótem lista das suas peças
-	Atributos:
-		- Cor do lado:
-			0 / bool=true: Cor 1
-			1 / bool=false: Cor 2
-		- Lista de peças da entidade: Array[ChessPiece]
-	Métodos:
-		- @abstract Jogar a rodada
-			// Lógica de ação da rodada || Ex: Algoritmo de IA ou criar interface para o usuário interagir.
-		- @abstract  Promover peão(peão: Pawn)
-		- Peças no tabuleiro: Array[ChessPiece]
-		- Peças fora do tabuleiro: Array[ChessPiece]
+---
 
-- Regras do Xadrez (ChessRules) -> Object
-	- Contém regras do jogo em relação ao tabuleiro
-	Atributos:
-		- chessboard: Chessboard
-	Métodos:
-		- É CheckMate?: Bool // Regra de checkmate
-		- É Empate?: Bool // Regra de empate
+#### *ChessEngine*
 
-- Tabuleiro (Chessboard)
-	- Representa o tabuleiro
-	- Terá um conjunto de ChessSquare
-	- Atribui as coordenadas aos ChessSquare
-	Atributos:
-		- Matriz de ChessSquare 8x8: Array[ChessSquare]
-	Métodos:
-		- Criar Matriz
-			Cria instâncias de ChessSquare
-			Atribui coordenadas
-		STATIC:
-			- Mover peça no tabuleiro(peça: ChessPiece, para a casa: ChessSquare): Void
-			- Remover peça do tabuleiro(peça: ChessPiece): Void
-			- Adicionar peça no tabuleiro(peça: ChessPiece, para a casa: ChessSquare): Void
-			// EM DÚVIDA:
-				- Modificar/Substituir peça no tabuleiro(peça: ChessPiece, nova peça: ChessPiece): Void
+Classe central da lógica do xadrez, funcionando como um núcleo. Será composta por várias classes - cada uma com um propósito, conectando elas.
 
-- As Casas (ChessSquare) -> Object
-	- Representa cada casa do tabuleiro
-	Atributos:
-		- Cordenada: Vector2i
-			y = letras (a-h): Coluna
-			x = números (1,8): Linha
-		- Cor da casa:
-			0 / bool=true: Cor 1
-			1 / bool=false: Cor 2
-		- Pertence a este tabuleiro: Chessboard
-		- Peça no quadrado: ChessPiece
-	Métodos:
-		- Pegar Cordenada
-		- Tem peça?: Bool
-		- Pegar tabuleiro: Chessboard
-		- Pegar Peça: ChessPiece
-		- Pegar Cor: Int/Bool
+**Responsabilidades:**
+* Reduzir o acoplamento entre os módulos/classes sendo uma ponte para a comunicação entre os mesmos.
+* Centralizar a lógica do xadrez numa única interface. 
+* Conterá todas as etapas do xadrez:
+	1. Início do xadrez *(new_game)*
+	2. Coreloop *(next_turn, sistema de rodadas)*
+	3. Regras do xadrez *(check, checkmate, etc.)*
+	4. Conclusão *(relatório)*
 
-- Peça de Xadrez (ChessPiece) -> Object | Inheritance
-	- Representa cada peça do xadrez
-	- Servirá de base para herança
-	Atributos:
-		- Casa atual: ChessSquare
-		- Cor da peça:
-			0 / bool=true: Cor 1
-			1 / bool=false: Cor 2
-	Métodos:
-		- @abstract Casas disponíveis: Array[ChessSquare]
-			Verá as casas existentes e usará lógica de matrizes para determinar a movimentação
-		- @abstract Interagir com a casa(casa: ChessSquare) // Realiza a interação com a casa
-		- Está no tabuleiro: Bool
-			True se a casa atual não for null
-		- Pegar cor: Int/Bool
+---
+
+#### *ChessRules*
+
+**Responsabilidades:**
+- Centralização das lógicas do xadrez
+- Conterá todas as regras macro do xadrez, como check/checkmate.
+
+---
+
+#### *Chessboard*
+
+**Responsabilidades:**
+- Contém o conjunto de casas/squares.
+- Servir de interface para a interação com cada square.
+- Centralizar todo o conceito de tabuleiro do xadrez.
+
+**Propriedades:**
+- *board Dictionary[Vector2i, object]*: Representa o tabuleiro
+
+##### ***Como vai funcionar?***
+*board* será um dicionário que conterá coordenadas como chave, e a peça como valor. Toda a interação com os squares - como "Tem uma peça nessa coordenada?", será feita por meio do **Chessboard**.
+
+---
+
+#### *ChessPlayer*
+**Responsabilidades:**
+- Representa o jogador do xadrez.
+- Centralização da conversa entre o jogador - seja IA ou um humano, com o ChessEngine.
+
+**Propriedades:**
+- *team [ChessEnums](#chessenums).ChessTeam*
+- *pieces Array[[ChessPieces]](#chesspieces)*
+
+---
+
+#### *ChessPieces*
+
+**Responsabilidades:**
+- Representa cada peça
+
+**Propriedades:**
+- *coordinate Vector2i*
+- *team [ChessEnums](#chessenums).ChessTeam*
+- *has_moved bool*
+
+##### ***Como vai funcionar?***
+**ChessPiece** será uma representação das peças, as movimentações, identificação de cada peça e regras especiais do mesmo.
+
+---
+
+#### *PieceMovements*
+**Responsabilidades:**
+- Centralizar a lógica de movimentação das peças.
+
+##### ***Como vai funcionar?***
+Toda a interação que envolva a movimentação de uma peça - seja a própria peça entregar suas possíveis movimentações ou então verificação de movimento (como check e checkmates), será por meio dessa classe.
+
+---
+
+#### *ChessVariables*
+
+**Responsabilidade:** Centralizar as variáveis/constantes na qual 2 ou mais classes usarão.
+
+**Propriedades:**
+- *LINES int*: A quantidade máxima de linhas do tabuleiro.
+- *COLUMNS int*: A quantidade máxima de colunas do tabuleiro.
+
+---
+
+#### *ChessEnums*
+
+**Responsabilidade:** Centralizar as enumerações na qual 2 ou mais classes usarão.
+
+**Propriedades:**
+- *ChessTeam [WHITE, BLACK]*: Representa o lado do time.
+
+---
+
+#### *Sugestões*
+
+Este capítulo contém ideias que podem ser úteis após o desenvolvimento do jogo.
+
+- [Chessboard](#chessboard).***Tracker*** *Dictionary*: Criar um tipo de tracker de movimentações de cada peça, para saber quais coordenadas podem ter tais peças.
+	- **O que isso pode resolver?** 
+		- Facilita a detecção automática de checkmate.
+		- Verificar se uma peça pode ser capturada.
+		- Pode ser usada para validar jogadas de IA.
+
+--- 
 
 ### Visual
-Paradigma 1 - Abstração máxima:
-	Representa a tabela como um todo > ChessTable:
-		- API para input do jogador / Ler input
-		- Atualiza de forma automática de acordo com o estado do jogo
-	Representa cada quadrado da tabela > TableSquare:
-		- Tem referência o ChessSquare
-		- Pode atualizar para refletir o estado do ChessSquare
-	Representa as peças > TablePiece:
-		- Tem referência o ChessPiece
-		- Determina o visual da peça
 
-- Tabela (ChessTable) -> Node2D
+Toda a lógica da interface gráfica fica aqui, totalmente separada da lógica do jogo.
+
+---

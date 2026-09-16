@@ -9,7 +9,7 @@ var _scene_loaded: Node
 func _ready() -> void:
 	if not go_to:
 		return push_error("Nenhuma cena adicionada.")
-	_scene_loaded = preload("res://assets/scenes/test_menu.tscn").instantiate()
+	_scene_loaded = go_to.instantiate()
 	connect("pressed", _on_button_pressed)
 
 func _on_button_pressed() -> void:
