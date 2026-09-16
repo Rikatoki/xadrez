@@ -7,13 +7,10 @@ var player2: ChessPlayer = ChessPlayer.new()
 
 
 func _ready() -> void:
-	var moves: PieceMovements = PieceMovements.new(ChessEnums.ChessTeam.WHITE)
 	print(chess_engine)
 	chess_engine.new_game(player1, player2)
-	print(chess_engine)
-	print("Movimentação caso o torre estivesse de frente com os peões Brancos: ", moves.cross_move(Vector2i(3, 4)))
-	print("Movimentação caso o bispo estivesse de frente com os peões brancos: ", moves.diagonal_move(Vector2i(3, 4)))
-	end_test()
+	print(player1.player_pieces)
+	print(player2.player_pieces)
 
 
 func end_test() -> void:

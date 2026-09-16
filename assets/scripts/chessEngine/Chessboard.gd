@@ -19,6 +19,7 @@ func move_piece(piece: ChessPiece, to: Vector2i) -> Chessboard:
 		return self
 	if has_piece(to):
 		remove_piece(to)
+	remove_piece(piece.piece_coordinate)
 	board[to] = piece.set_coordinate(to)
 	return self
 

@@ -122,15 +122,13 @@ Toda a interação que envolva a movimentação de uma peça - seja a própria p
 
 #### *Sugestões*
 
+Este capítulo contém ideias que podem ser úteis após o desenvolvimento do jogo.
 
-*PieceMove*  
-Essa classe representa a ação da movimentação.  
-
-***Implementação***: Ao invés das Piece's entregar uma lista de coordenadas, elas criam uma lista de PieceMove. Então, o ChessEngine receberá o PieceMove e o executará usando uma função base do mesmo. 
-
-***Movitos para implementar***:  
-- É possível facilitar a idêntificação do tipo da ação que a peça irá fazer, considerando que cada tipo herdará de PieceMove e ficará como: CapturePiece.
-- Abstrai o conceito de ação de uma peça.
+- [Chessboard](#chessboard).***Tracker*** *Dictionary*: Criar um tipo de tracker de movimentações de cada peça, para saber quais coordenadas podem ter tais peças.
+	- **O que isso pode resolver?** 
+		- Facilita a detecção automática de checkmate.
+		- Verificar se uma peça pode ser capturada.
+		- Pode ser usada para validar jogadas de IA.
 
 --- 
 
