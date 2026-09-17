@@ -13,12 +13,11 @@ Plataformas: #Web
 
 ## *Sistemas principais*
 
-É necessário lembrar que as classes irá se expandir conforme a necessidade na produção.
-
-Dicas:
-1. Não tente fazer tudo de uma só vez, foque apenas em uma única coisa.
-2. As classes devem expandir comforme a necessidade.
-3. Tenha um bom nível de desing.
+- É necessário lembrar que as classes irá se expandir conforme a necessidade na produção.
+- Dicas:
+	1. Não tente fazer tudo de uma só vez, foque apenas em uma única coisa.
+	2. As classes devem expandir comforme a necessidade.
+	3. Tenha um bom nível de desing.
 
 ---
 
@@ -129,6 +128,12 @@ Este capítulo contém ideias que podem ser úteis após o desenvolvimento do jo
 		- Facilita a detecção automática de checkmate.
 		- Verificar se uma peça pode ser capturada.
 		- Pode ser usada para validar jogadas de IA.
+- [ChessEngine](#chessengine) ***Fluxo de controle explícito***
+	- **Soluções:**
+		- ***signals***: Criar sinais no Engine e resolver problema de fluxo baseando-se nelas. **EX:** Dar uma rodada como completa após o sinal de peça movida for acionada. (No caso de peça movida, o sinal pode ficar dentro do [ChessBoard](#chessboard).) || NÃO É A MELHOR SOLUÇÃO PORÉM, É BOM IMPLEMENTAR SINAIS.
+		- ***Methods***: Criar métodos para a interação principal com o jogo para definir o fluxo. ***EX:*** [ChessEngine](#chessengine).move_piece, essa função seria a função principal para que os players movem a peça. Dentro dela, pode definir o fluxo do jogo tendo uma permissão para mover a peça, como: Peças brancas, caso for a rodada do lado branco. Nenhuma peça, caso não seja rodada de ninguém. E caso foi permitido o movimento, a função faz seguir o fluxo da engine acabando com a rodada do lado respectivo. || MAIS PREFERIDO.
+	- **O que isso pode resolver?**
+		- Melhor controle de fluxo. Atualmente o fluxo é linear, ou tudo resolve pelo player na função play_turn, ou a engine continua com as rodadas sem que o player tenha realmente jogado.
 
 --- 
 
@@ -137,3 +142,7 @@ Este capítulo contém ideias que podem ser úteis após o desenvolvimento do jo
 Toda a lógica da interface gráfica fica aqui, totalmente separada da lógica do jogo.
 
 ---
+
+#### ***ChessHumanPlayer***
+**Responsabilidades:**
+- Ponte entre a lógica e a interface.
