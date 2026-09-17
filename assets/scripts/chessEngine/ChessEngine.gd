@@ -42,7 +42,6 @@ func new_game(white: ChessPlayer, black: ChessPlayer) -> ChessEngine:
 
 
 func next_turn() -> void:
-	print(self)
 	if _game_ended():
 		return
 	var current_turn: ChessPlayer
@@ -56,7 +55,7 @@ func next_turn() -> void:
 	else:
 		return
 	
-	current_turn.play_turn(self)
+	await current_turn.play_turn(self)
 	# Após a rodada acabar...
 	state = next_state
 	

@@ -11,7 +11,7 @@ func _create_board() -> void:
 	board = {}
 	for line in range(1, ChessVariables.LINES + 1):
 		for column in range(1, ChessVariables.COLUMNS + 1):
-			board[Vector2i(line, column)] = null
+			board[Vector2i(column, line)] = null
 
 
 func move_piece(piece: ChessPiece, to: Vector2i) -> Chessboard:
@@ -44,8 +44,6 @@ func get_piece_by_coordinate(coordinate: Vector2i) -> ChessPiece:
 
 func is_valid_coordinate(coor: Vector2i) -> bool:
 	var valid: bool = board.has(coor)
-	if not valid:
-		push_warning("Coordernadas fora do padrão: {0}".format([coor]))
 	return valid
 
 
@@ -63,7 +61,7 @@ func _to_string() -> String:
 			line_str += "[  ]"
 		else:
 			line_str += "[{0}]".format([piece])
-		if coord.y % ChessVariables.COLUMNS == 0:
+		if coord.x % ChessVariables.COLUMNS == 0:
 			board_str = line_str + "\n" + board_str
 			line_str = ""
 	return board_str

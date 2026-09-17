@@ -1,3 +1,3 @@
 [X] Revisar o componente atual do ChessEngine: Início do jogo
-[ ] Avançar para o próximo componente: CoreLoop
-[ ] Iniciar a interface gráfica do usuário
+[X] Avançar para o próximo componente: CoreLoop
+[X] Iniciar a interface gráfica do usuário

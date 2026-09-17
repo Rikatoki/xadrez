@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5b1h402orsi8"]
+
+[ext_resource type="Script" uid="uid://ck8us1uncngs0" path="res://assets/scripts/gui/Chessboard/GUISquare.gd" id="1_tvukr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ula1"]
+size = Vector2(16, 16)
+
+[node name="Square" type="Node2D" unique_id=1583689983]
+script = ExtResource("1_tvukr")
+metadata/_custom_type_script = "uid://ck8us1uncngs0"
+
+[node name="Bp" type="Sprite2D" parent="." unique_id=331328911]
+y_sort_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=818182900]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1788933273]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_5ula1")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

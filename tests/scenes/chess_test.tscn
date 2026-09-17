@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://d4a8j6atfrqte"]
 
 [ext_resource type="Script" uid="uid://b8nlsumq4sova" path="res://tests/scripts/ChessTest.gd" id="1_f4caj"]
+[ext_resource type="PackedScene" uid="uid://cie40mu5kiu8a" path="res://assets/scenes/chessboard.tscn" id="2_yjn3k"]
 
 [node name="ChessTest" type="Node" unique_id=851504971]
 script = ExtResource("1_f4caj")
 
 [node name="Timer" type="Timer" parent="." unique_id=879034904]
-wait_time = 10.709999999999999
+wait_time = 188.829
 one_shot = true
 autostart = true
+
+[node name="Chessboard" parent="." unique_id=1064945145 instance=ExtResource("2_yjn3k")]
+position = Vector2(205, 111)
 
 [connection signal="timeout" from="Timer" to="." method="end_test"]

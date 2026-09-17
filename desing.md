@@ -121,7 +121,7 @@ Toda a interação que envolva a movimentação de uma peça - seja a própria p
 
 #### *Sugestões*
 
-Este capítulo contém ideias que podem ser úteis após o desenvolvimento do jogo.
+Aqui contém ideias para a melhora do lado lógico.
 
 - [Chessboard](#chessboard).***Tracker*** *Dictionary*: Criar um tipo de tracker de movimentações de cada peça, para saber quais coordenadas podem ter tais peças.
 	- **O que isso pode resolver?** 
@@ -146,3 +146,12 @@ Toda a lógica da interface gráfica fica aqui, totalmente separada da lógica d
 #### ***ChessHumanPlayer***
 **Responsabilidades:**
 - Ponte entre a lógica e a interface.
+
+---
+
+### Sugestões
+
+Aqui contém ideias gerais que podem ser úteis para implementar.
+
+- ***Ligação entre lógica e interface***:
+	- ***Signals***: Usar sinais chamados pela parte lógica e ouvidos pela interface. Assim, a interface pode mudar de acordo com as mudanças da parte lógica.

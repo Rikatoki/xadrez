@@ -90,10 +90,10 @@ func knight_move(from: Vector2i) -> Array[Vector2i]:
 func pawn_move(from: Vector2i, times: int = 1) -> Array[Vector2i]:
 	var moves: Array[Vector2i] = []
 	var direction: int = 1 if piece_side == GameVariables.ChessSide.WHITE else -1
-	var diagonal_l: Vector2i = Vector2i(from.x + 1 * direction, from.y - 1)
-	var diagonal_r: Vector2i = Vector2i(from.x + 1 * direction, from.y + 1)
+	var diagonal_l: Vector2i = Vector2i(from.x - 1, from.y + 1 * direction)
+	var diagonal_r: Vector2i = Vector2i(from.x + 1, from.y + 1 * direction)
 	for i in range(1, times + 1):
-		var move = Vector2i(from.x + i * direction, from.y)
+		var move = Vector2i(from.x, from.y + i * direction)
 		if _can_continue(move):
 			moves.append(move)
 	if chessboard.is_valid_coordinate(diagonal_l):
