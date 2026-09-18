@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func on_pressed() -> void:
-	get_tree().change_scene_to_packed(go_to_scene)
+	get_tree().change_scene_to_packed(preload("uid://d4a8j6atfrqte"))

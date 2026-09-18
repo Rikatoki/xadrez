@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bjyi5qvx353pb"]
 
-[ext_resource type="Script" uid="uid://c00lyjajoypv8" path="res://assets/scripts/gui/ExitButton.gd" id="2_etq7q"]
 [ext_resource type="Script" uid="uid://qdce5s8gtsd6" path="res://assets/scripts/gui/ChangeSceneTXTButton.gd" id="2_mjw13"]
 [ext_resource type="PackedScene" uid="uid://d4a8j6atfrqte" path="res://tests/scenes/chess_test.tscn" id="2_vgc5d"]
 [ext_resource type="Texture2D" uid="uid://ekudxvr7auvc" path="res://assets/sprites/User Interface/UiCozyFree.png" id="4_0latg"]
@@ -71,11 +70,6 @@ texture_normal = SubResource("AtlasTexture_l0pj7")
 texture_pressed = SubResource("AtlasTexture_44stn")
 script = ExtResource("2_mjw13")
 go_to_scene = ExtResource("2_vgc5d")
-
-[node name="QuitButton" type="Button" parent="PanelContainer/ButtomContainer/Buttons" unique_id=1079028508]
-layout_mode = 2
-text = "Sair"
-script = ExtResource("2_etq7q")
 
 [node name="Title" type="Label" parent="." unique_id=85825114]
 layout_mode = 0
