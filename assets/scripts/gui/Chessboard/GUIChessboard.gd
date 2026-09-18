@@ -67,23 +67,26 @@ func update() -> void:
 
 
 func select_square(square: GUISquare) -> void:
+	if _chess_engine.state not in [_chess_engine.States.WHITE_TURN, _chess_engine.States.BLACK_TURN]:
+		return
 	# Adiciona como selecionada.
 	if not _selected_square:
-		if not square.piece.get_movements().is_empty():
-			_selected_square = square
-			print(_selected_square)
-			update()
+		var piece: ChessPiece = square.piece
+		var team: ChessEnums.ChessTeam = piece.piece_team
+		if (team == ChessEnums.ChessTeam.WHITE and _chess_engine.state == _chess_engine.States.WHITE_TURN) or (team == ChessEnums.ChessTeam.BLACK and _chess_engine.state == _chess_engine.States.BLACK_TURN):
+			if not piece.get_movements().is_empty():
+				_selected_square = square
+				update()
 	# Emite o sinal indicando que a movimentação foi feita.
 	else:
 		var coor: Vector2i = square.coordinate
 		var piece: ChessPiece = _selected_square.piece
-		selected_move.emit(piece, coor)
+		if piece.piece_coordinate != coor:
+			selected_move.emit(piece, coor)
 		_selected_square = null
-		print("SINAL EMITIU")
 		update()
 
 
 func get_square(coord: Vector2i) -> Vector2:
 	var pos: Vector2i =  squares_corner + Vector2(square_proporsion.x * (coord.x - 0.5), (square_proporsion.y * (coord.y * -1)))
-	print(pos, coord)
 	return pos
