@@ -1,8 +1,40 @@
 [gd_scene format=3 uid="uid://bjyi5qvx353pb"]
 
-[ext_resource type="Script" uid="uid://c5burhlx3xc6r" path="res://assets/scripts/gui/SceneButton.gd" id="1_omajv"]
 [ext_resource type="Script" uid="uid://c00lyjajoypv8" path="res://assets/scripts/gui/ExitButton.gd" id="2_etq7q"]
+[ext_resource type="Script" uid="uid://qdce5s8gtsd6" path="res://assets/scripts/gui/ChangeSceneTXTButton.gd" id="2_mjw13"]
 [ext_resource type="PackedScene" uid="uid://d4a8j6atfrqte" path="res://tests/scenes/chess_test.tscn" id="2_vgc5d"]
+[ext_resource type="Texture2D" uid="uid://ekudxvr7auvc" path="res://assets/sprites/User Interface/UiCozyFree.png" id="4_0latg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnpo0"]
+atlas = ExtResource("4_0latg")
+region = Rect2(13.921783, 178.0255, 75.70693, 61.945206)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ula1"]
+texture = SubResource("AtlasTexture_xnpo0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c0ud"]
+atlas = ExtResource("4_0latg")
+region = Rect2(7.9698124, 166.88324, 87.1666, 81.21184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyyhh"]
+texture = SubResource("AtlasTexture_5c0ud")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0pj7"]
+atlas = ExtResource("4_0latg")
+region = Rect2(1.9861679, 4.9612207, 90.04081, 27.064198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44stn"]
+atlas = ExtResource("4_0latg")
+region = Rect2(98.950386, 6.99954, 90.01229, 25.029177)
+
+[sub_resource type="Theme" id="Theme_5ula1"]
+Label/colors/font_outline_color = Color(0.2650583, 0.24527127, 0.17139721, 1)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 32
 
 [node name="TestMenu" type="Control" unique_id=1303519598]
 layout_mode = 3
@@ -12,37 +44,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="." unique_id=1962134262]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1062849973]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.20216277, 0.19290942, 0.18222255, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ula1")
 
-[node name="Buttons" type="VBoxContainer" parent="." unique_id=1410549221]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = -36.0
-offset_right = 49.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ButtomContainer" type="PanelContainer" parent="PanelContainer" unique_id=590375706]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_uyyhh")
+
+[node name="Buttons" type="VBoxContainer" parent="PanelContainer/ButtomContainer" unique_id=1410549221]
+layout_mode = 2
 alignment = 1
 
-[node name="InitButton" type="Button" parent="Buttons" unique_id=952491959]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/ButtomContainer/Buttons" unique_id=1949703488]
 layout_mode = 2
-text = "Inicar Teste"
-script = ExtResource("1_omajv")
-go_to = ExtResource("2_vgc5d")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_l0pj7")
+texture_pressed = SubResource("AtlasTexture_44stn")
+script = ExtResource("2_mjw13")
+go_to_scene = ExtResource("2_vgc5d")
 
-[node name="QuitButton" type="Button" parent="Buttons" unique_id=1079028508]
+[node name="QuitButton" type="Button" parent="PanelContainer/ButtomContainer/Buttons" unique_id=1079028508]
 layout_mode = 2
 text = "Sair"
 script = ExtResource("2_etq7q")
+
+[node name="Title" type="Label" parent="." unique_id=85825114]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 32.0
+offset_right = 242.0
+offset_bottom = 58.0
+theme = SubResource("Theme_5ula1")
+text = "Chess"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -155,3 +155,4 @@ Aqui contém ideias gerais que podem ser úteis para implementar.
 
 - ***Ligação entre lógica e interface***:
 	- ***Signals***: Usar sinais chamados pela parte lógica e ouvidos pela interface. Assim, a interface pode mudar de acordo com as mudanças da parte lógica.
+- **Refatorar completamente a parte visual após as refatorações na lógica.**

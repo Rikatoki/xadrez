@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="Xadrez"
-config/version="Alpha 1.0"
+config/version="Beta 1.0"
 config/tags=PackedStringArray("2d", "estudo", "simples", "strategy")
 run/main_scene="uid://bjyi5qvx353pb"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.810641, 0.7584977, 0.6405624, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -44,3 +45,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.74729854, 0.71187264, 0.6049066, 1)

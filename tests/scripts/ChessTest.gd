@@ -5,6 +5,7 @@ var chess_engine: ChessEngine = ChessEngine.new()
 var player1: ChessPlayer = ChessHumanPlayer.new()
 var player2: ChessPlayer = ChessHumanPlayer.new()
 @onready var chessboard: GUIChessboard = $Chessboard
+@onready var end_game_label: Label = $GUI/EndGameLabel
 
 
 func _ready() -> void:
@@ -17,6 +18,6 @@ func _ready() -> void:
 	print(player2.player_pieces)
 	chessboard.update()
 
-
-func end_test() -> void:
-	get_tree().quit()
+func _process(delta: float) -> void:
+	if chess_engine.state in [chess_engine.States.VICTORY, chess_engine.States.DRAW]:
+		end_game_label.visible = true

@@ -9,8 +9,9 @@ size = Vector2(16, 16)
 script = ExtResource("1_tvukr")
 metadata/_custom_type_script = "uid://ck8us1uncngs0"
 
-[node name="Bp" type="Sprite2D" parent="." unique_id=331328911]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=331328911]
 y_sort_enabled = true
+offset = Vector2(0, 8)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=818182900]
 

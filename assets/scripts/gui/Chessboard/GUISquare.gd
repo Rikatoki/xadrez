@@ -24,10 +24,15 @@ func _input(event: InputEvent) -> void:
 func setup(coord: Vector2i, _piece: ChessPiece) -> GUISquare:
 	coordinate = coord
 	piece = _piece
-	if piece:
-		for child in get_children():
-			if child is Sprite2D:
+	for child in get_children():
+		if child is Sprite2D:
+			if piece:
+				child.offset = Vector2(0,0)
 				var texture: CompressedTexture2D = load("res://assets/sprites/16x32 pieces/{0}.png".format([piece]))
+				child.texture = texture
+			else:
+				child.offset = Vector2(0,8)
+				var texture: AtlasTexture = preload("res://assets/resources/can_select_square_atlas.tres")
 				child.texture = texture
 	return self
 
