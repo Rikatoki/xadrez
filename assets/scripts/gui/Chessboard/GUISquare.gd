@@ -10,8 +10,9 @@ signal mouse_clicked(node: GUISquare)
 var _mouse_over: bool = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _process(_delta: float) -> void:
+	if _mouse_over:
+		CustomMouse.interactable_mode = _mouse_over
 
 
 func _input(event: InputEvent) -> void:

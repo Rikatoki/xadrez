@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GAME_VARIABLES="*uid://bvluee1ctt4w6"
+CustomMouse="*uid://jucjw41hkb8b"
 
 [display]
 
@@ -31,6 +32,7 @@ window/stretch/mode="canvas_items"
 [gui]
 
 theme/custom="uid://bikt2d6ik2jqk"
+theme/custom_font="uid://c5tom7n2yrtjp"
 
 [physics]
 

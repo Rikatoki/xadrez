@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cie40mu5kiu8a"]
 
 [ext_resource type="Script" uid="uid://drudmu11skk6g" path="res://assets/scripts/gui/Chessboard/GUIChessboard.gd" id="1_kb778"]
-[ext_resource type="Texture2D" uid="uid://cfv1f7rqav5wf" path="res://assets/sprites/boards/board_plain_04.png" id="1_ndeeb"]
+[ext_resource type="Texture2D" uid="uid://bjiau4167si08" path="res://assets/sprites/boards/board_plain_05.png" id="2_kb778"]
 
 [node name="Chessboard" type="Node2D" unique_id=1064945145]
 y_sort_enabled = true
@@ -9,6 +9,6 @@ script = ExtResource("1_kb778")
 squares_corner = Vector2(-64, 64)
 square_proporsion = Vector2(16, 16)
 
-[node name="BoardSprite" type="Sprite2D" parent="." unique_id=1776586959]
+[node name="BoardSprite" type="Sprite2D" parent="." unique_id=1960820507]
 z_index = -1
-texture = ExtResource("1_ndeeb")
+texture = ExtResource("2_kb778")
